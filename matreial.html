@@ -1,0 +1,832 @@
+<!--    
+                                            " Var, Let, Const Compare "
+
+var :
+- Redeclare (yes)
+- Access Before Declare (undefined)
+- Variable Scope Drama [Added To Window]( بينحط في الويندو اوبجيكت وهالاشي بسويلي مشكله بالتطبيقات الكبيره)
+- Block Or function scope = (function) يعني لما يكون عندي متغيرين بنفس الاسم برا البلوك وواحد جوا , اللي جوا
+                                    بعمل اوفررايد عاللي برا اما الليت والكونست العكس ما بصير عندي هالاشي.
+
+let :
+- Redeclare (No => Error)
+- Access Before Declare (Uncaught ReferenceError: Cannot access 'a' before initialization)
+- Variable Scope Drama [Added To Window](ما بنحط)
+- Block Or function scope = (Block)
+
+
+const :
+- Redeclare (No => Error)
+- Access Before Declare (Uncaught ReferenceError: Cannot access 'a' before initialization)
+- Variable Scope Drama [Added To Window](ما بنحط)
+- Block Or function scope = (Block)
+
+========================================================================================================================
+                                            " Template Literals (Template String) "
+
+- in EcmaScript we use Backtic instead of single/double qoutes ( ` )
+- we use  ( ${var here} ) to add variable or expression inside string
+- we can concat strings by space witout needs to use " " inside string  
+    ex: console.log(`${a} ${a} ${a} ${a}`)
+- we can prints two lines by just press enter to go next line without using escape sequence.
+- we can prints special chars by just enter the chars without using escape sequence.
+    (طبعا لسا بقدر استخدم السكيب سيكوينس هون عادي جدا)
+-طبعا بقدر جوا الباك تيك اكتب تاغات اتش تي ام ال عادي جدا مع كلاسات وايديهات وما الى ذلك اسهل وانظم من الجافا سكربت التقليديه
+
+==========================================================================================================================
+
+                                            " Unary Plus And Unary Negation Operators "
+
+-هذول العمليتين بستخدمهم لتحويل السترنج لرقم اما بالسالب بالموجب بشكل سريع
+
+1- (+) unary Plus [Rrtuen Number if its Not number]
+2- (-) unary Negation [Rrtuen Number if its Not number & negate It (بتخليه سالب)]
+
+ex : 
+    console.log(+100); //100
+    console.log(+"100"); //100 (number data type)
+    console.log(+"-100"); //-100 (number data type)
+    console.log(+"Mahmood"); //NaN
+    console.log(+"15.5"); //15.5
+    console.log(+0xff); //hexadecimal number output is 255
+    console.log(+null) //0
+    console.log(+false); //0
+    console.log(+true); //1
+
+    console.log(-100); //-100
+    console.log(-"100"); //-100 (number data type)
+    console.log(-"-100"); //100 (number data type)
+    console.log(-"Mahmood"); //NaN
+    console.log(-"15.5"); //-15.5
+    console.log(-0xff); //hexadecimal number output is 255
+    console.log(-null) //-0
+    console.log(-false); //-0
+    console.log(-true); //-1
+
+    ** i can use number() operator to cahnge string to number,but unary is easy and can convert
+         to postive/negative numbers
+
+=============================================================================================
+                                             " Type Coercion (Type Casting)"
+- هون بدنا نحكي عن عملية تحويل البيانات من نوع لنوع 
+
+=============================================================================================
+
+                                            " Number "
+
+- Double Precision : الارقام بالجافا سكربت كلهم بتخزنو دوبل مش زي اللغات الثانيه دوبل وفلوت وانتجر....
+
+- Syntatic Sugar : هاي الخاصيه بالجاف سكربت هي تعني اني اضيف سكر عالرقم , مثلا لو عندي رقم 1000000
+                    بقدر اضيف اندر سكور بين الاصفار عشان اعرف اعدهم وبتضل الجافا سكربت تقرأه نمبر بدون مشاكل10_000_00
+
+-console.log(1e6); //هاي تساوي مليون طبعا والمعنى بقدر اكتب الارقام بأكثر من طريقه
+
+- طبعا الارقام بالجافا سكربت الها حد معين عشان هيك طلع عندي نوع بيانات اسمه (Big integer).
+
+- console.log(Number.MAX_SAFE_INTEGER); //هاي الميثود بالنمبر بتعطيني اعلى واقل رقم أمن ممكن استخدمه بدون ما يطلعلي مشاكل
+- console.log(Number.MIN_SAFE_INTEGER);
+
+- console.log(Number.MAX_VALUE); //اكبر رقم ممكن توصله باللغه 
+
+=============================================================================================
+                                    " - Number Methods"
+
+- Number.isInteger(100); //هاي ظهرت بالايكما سكربت وبتشيكلي اذا الرقم انتجر ولا لأ
+- Number.isNaN("mahmood" / 3); //نفس الفكره بس هون بشيك على البيانات الللي راجعه الك كامله(فيها لُبس) يعني بشيك هل هي من نوع
+                        نان وولا لأ
+=============================================================================================
+                                      "  #025 - Math Object "
+
+- trunc() // ضافوها بالايكما سكربت وهي بتقطع الرقم وبترجعلك الجزء الصحيح منه بس
+
+=============================================================================================
+
+                                        " String Methods Part 3"
+
+- عندي كم ميثود انضافو بالايكما سكربت كلهم برجعة تروو او فولس
+
+1- includes(val,start [opt]); 
+2- startsawith(val,start [opt]); 
+3- endsawith(val,length[opt]); //انا بقدر احددل طول محدد من السترنج
+
+============================================================================================
+
+                                    "#035 - Conditional Ternary Operator"
+
+- اختصار للاف بسطر واحد
+
+
+
+ex : 
+    let theGender = "Male";
+    theGender === "Male" ? console.log("Mr") : console.log("Mrs");
+
+- بقدر كمان اخزن النتيجه بمتغير مش بس اطبع جمله معينه 
+
+    ex : 
+        let result = theGender === "Male" ? "Mr" : "Mrs";
+    
+    Ex :
+        console.log(`Hello ${theGender === "Male" ? "Mr" : "Mrs"}`) //مثال بوضح استخدام الاكسبريشن بالتمبليت ليتيراليز
+
+
+-بقدر طبعا اعمل اكثر من اف عادي بأكثر من شرط هون كالتالي :
+
+
+=================================================================================================
+
+                                    "#036 - Nullish Coalescing Operator And Logical Or"
+
+- هون بدي اعرف شغله اني كيف ممكن اعرض بيانات بديله في حال ما في بيانات راجعه الي.
+
+- كيف بستخدمها ؟ بستخدم اللوجيكال اور (||) ؟نعم طبعا بستخدمها وبسويها ع اساس ترو وفولس (null or undifined or any false value)
+
+- Nullish Coalescing Operator (??) : هذا الاوبيراتور ملوش علاقه بالفولس فاليو , يعني مش زي الاور اوبيراتر لاني ممكن ببعض الاحيان احتاج ارجع فولس فاليو عادي,
+                                    وبشتغل في حالة كانت القيمه (null or undefind) 
+ 
+=====================================================================================================
+
+                                    " #043 - Searching Array "
+
+
+- غير الانديكس اوف واللاست اندكس اوف, عندي هون بال(ES) الانكلود.
+- includes : return true / false.
+-syntax :
+    arr.includes(valu[جباري],indexToStart[اختياري]);
+
+====================================================================================================     
+                                    "#051 - Loop Control - Break, Continue, Label"
+
+- هون بدنا نحكي عن طريقة التحكم باللوب تاعتنا باستخدام ثلث مصطلحات:
+
+1- Break : بتوقف اللوب وبتطلع منها عند شرط معين
+
+2- Continue : بطلع من اللفه اللي هو فيها وبنط عاللفه الل بعدها
+
+3- Label : الليبل بتسخدمها مثلا في حال كان عندي نيستد لوبس
+            بحط للوب الخارجيه ليبل (مُعرف) اوصللها منه , واللوب الداخليه نفس الاشي 
+            وبصير اقدر من اللوب الداخليه اوقف الخارجيه بالبريك واعطيها اسم الليبل تاع اللوب الخارجيه وهكذا.
+
+=============================================================================================
+
+                                " - Function Rest Parameters"
+- هون بدي احكي عن لما ابعث عناصر زياده للفنكشن اكثر من الباراميترز اللي عنده يعني في حالة عدم معرفه عدد الباراميتزر المرسله عند الاستدعاء للفنكنشن!
+
+- باستخدام الريست بارميترز بقدر استقبل اي عدد من الارجيومنتس بأرراي عادي بدون اي مشاكل وهما كان عددهم.
+
+- syntax(EX) :
+    function test(...numbers){
+        //Code Here
+    }
+- طبعا هاي الثلث نقاط والاسم اللي بعدها اسمها ريست بارميتزر وهي عباره عن ارراي 
+
+- طبعا مسموح اضيف ريست باراميتر واحد بس لأنه منطقيا هو هيك فكرته.
+- لازم يكون اخر واحد بالبارميتزر ما في بعده اشي.
+
+==================================================================================================
+
+                                    " - Anonymous Functions"
+
+- هون بدنا نحكي عن الانونيموس فنكشنز (مجهولة الهويه).
+
+-  معلومه : الفنكشن **العادي** بقدر استخدمها قبل تعريفها عادي مش حيعطيني (غير معرف) زي المُتغير اما الفنكشن المجهول لا بنفعش.
+
+- كيف عملية تعريفها ؟
+    syntax : 
+        let var = function(args){
+            //Code Here
+        }
+- كيف بناديه ؟
+        بستخدم اسم المتغير واقواس وبقدر ابعت ارقز عادي زي الفنكشن.
+
+- بقدر احط اسم للفنكشن ؟
+        عادي بنفع بس ما بقدر اناديه منه بس يستخدم للوصول الى الايرور في بعض الحالات
+
+-متى استخدمه؟ 
+        - مثلا لما يكون عندي كبسه معينه بتسويلي شغله معينه بس هي لحالها يعني الفنكشن مش عام 
+        مش اكثر من مره يتم استخدامه وهكذا.
+        - لما استخدم :
+            setTimeOut , SetInterval.
+
+- لو بدي انادي فنكشن عادي مُعرف بشكل طبيعي مش مجهول بناءا على حدث معين , كيف ؟
+    بتارجت العنصر وبحط = وبحط اسم الفنكشن بدون اقواس.
+
+=========================================================================================
+
+                                    " - Arrow Function Syntax"
+
+- الارو فنكنشن هو بديل للفنكشن العادي تبعنا , ولكن هو بديل محدود ومش افضل حاجه تستخدمها ولكن مفيد جدا وكثير الاستخدام.
+
+- Syntax : 
+        let print = (param1, param2) => {
+            return param1 + param2;
+        } 
+- في حالة كان عندي سكر واحد بس بقدر استغني عن الكيرلي بريسز.
+
+- في حال فش عندي باراميترز يستقبلهم الكود بقدر ما احط القوسين واحط بدالهم اندر سكور عادي.
+
+- لو عندي باراميتر واحد بقدر اشيل القوس عادي.
+
+===========================================================================================
+                                    " Scope - Lexical(static)"
+
+- الفكره هون انه لو كان عنا 2 فنكشنز جوا بعض , الاب ما بقدر يوصل للمتغيراتت اللي جوا الابن بس العكس بنفع.
+
+===========================================================================================
+
+                                    "#071 - Higher Order Functions - (Map)"
+
+- Higher Order Functions is a functions That Accepts Functions as Parameters and/or Returns a function.
+- الفنكشن اللي هي بتقبلها عادي بكون فيها باريميترز كمان فش مشكله.
+- الماب هي ارراي ميثود, ميثود خاصه باالاررايز بتتعامل مع الاررايز وبتنشأ أرراي جديده لما استخدمها.
+
+- Map :
+    -- Method Creates a new Array 
+    -- Populated With the Results of calling a provided function on every element.
+    -- in the calling array.
+
+    
+- Syntax map(callBackFunction(Element, Index, Array) { }, thisArg[Optional])
+    - Element => The Current element being processed in the array.(اجباري بالفنكشن)
+    - Index =>The index of the Current element being processed in the array.( اختياري بالغنكشن وبقدر اوصله حتى لو ما استعملته ك باراميتر)
+    - Array => The Array( اختياري بالغنكشن وبقدر اوصله حتى لو ما استعملته ك باراميتر)
+
+
+-Notes :
+  - Map Return A new Array.
+
+
+Exmples:
+  - Anonymous Function
+  - Named Function.
+
+- طبعا الماب وغيرها من الهاير اوردر فنكشن بستخدمهم بثلث طرق لما انادي الفنكشن او استخدمه:
+        1- احد الفنكشن طبيعي زي السنتاكس فوق بدون الحاجه لوضع كل الباريميترز زي ما كتبت فوق.
+        2- اعمل اارو فنكنشن كمان  عادي
+        3- لو كان عندي فنكنشن جاهز بدي اطبقه على الارراي اللي عندي بناديه بس بالاسم هيك:
+            let newArray = oldArray.map(function name);
+
+- الماب بتسويلي اكشن معين على العناصر.
+
+=========================================================================================
+                                    "Higher Order Functions - (Filter)"
+
+- الفلتر نفس الماب بالضبط ونفس السنتاكس ونفس البارميترز اللي بوخذهم الفنكنشن
+   ولكن الفرق بيهم وهو ليس فرق بل طريقة التنفيذ الا وهو انه الفلتر بيطلعلي ارراي جديده
+    فيه العناصر اللي عدت(مرقت) من التيست(الشرط).
+
+- filter :(بس كونديشنز يعني بتفلتر االاارراي)
+    -- Method Creates a new Array 
+    -- The new array contains an Elements That passed from condtion in the function.
+
+
+- Syntax filter(callBackFunction(Element, Index, Array) { }, thisArg[Optional])
+    - Element => The Current element being processed in the array.(اجباري بالفنكشن)
+    - Index =>The index of the Current element being processed in the array.( اختياري بالغنكشن وبقدر اوصله حتى لو ما استعملته ك باراميتر)
+    - Array => The Array( اختياري بالغنكشن وبقدر اوصله حتى لو ما استعملته ك باراميتر)
+
+- يعني بالفلتر انا بركز على الشرط اذا كان ترو برجع العنصر اللي انا عنده اذا فولس ما برجع وبمشي للي بعده
+
+=========================================================================================
+                                     "Higher Order Functions - (Reduce)"
+- الريديوس نفس مبدأ الماب والفلتر بتمشي على عناصر الارراي عنصر عنصر وبتنفذ عليه الفنكنشن بس الفرق
+  انها بالاخر بترجعلي قيمه وحده فقط من بين كل العناصر حسب الفنكنشن اما جمع العناصر او طرح او ضربها او اي عمليه
+  بترجعلي الناتج النهائي بس(قيمه واحده).
+
+
+- Reduce 
+ --- Method executes a reducer function on each element of the array
+    resulting in a single output value.
+
+
+- Syntax :
+  array.reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) {}, initalValue[للأكميوليتر])
+  - Accumulator => The accumulated Value Previously returned in the last invocation.
+  - Current Val => The Current Eelement being Processed in the array.
+  - Current Index => the index of current element being processed in the array.
+  ----------- Starts from index 0 if an intialValue is provided.
+  ----------- OtherWise, it starts From index 1.
+  - Array => The Array.
+
+  -InitalValue : هاي القيمه اللي بدي ابلش عندها بالجامع اذا ما حطيت قيمه خلص بوخذ اول عنصر وبحطها بالجامع وببلش يجمع العنصر الثاني
+                اما اذا حطيت قيمه بوخذها هي وببلش من العنصر الاول يجمع عليه.
+
+
+=========================================================================================
+                                     "Higher Order Functions - (ForEach)"
+
+- نفس مبدأ الماب والباقي ولكن هاي يفضل استخدامها لما اكون عندي مجموعة بيانات مش بحاجه اني اغير فيها.
+
+- ForEach :(ما بتنشأ أرراي جديده)
+    -- Metohd executes a provided function once for each array element.
+
+
+- Syntax :
+    forEach(callBackFunction(Element, Index, Array){}, thisArg)
+        - Element => The Current element being processed in the array.(اجباري بالفنكشن)
+        - Index =>The index of the Current element being processed in the array.( اختياري بالغنكشن وبقدر اوصله حتى لو ما استعملته ك باراميتر)
+        - Array => The Array( اختياري بالغنكشن وبقدر اوصله حتى لو ما استعملته ك باراميتر)
+    ex :
+     allElements.forEach(function (el){
+        //code Here will executes for every elements in allElements array.
+     });
+
+-Note:
+    - Doesn't Return Anything [undefined](يعني بقدرش استخدم الريترن فيها زي الماب والفلتر والريديوس)
+    - Breack Will Not breack the Loop.
+    - غالبا تستخدم مع الايفينتس, اضافة كلاسات , حذف كلاسات , اخفاء عنصر , اظهار عنصر , بدون الحاجه لتغيسر قيمة عنصر وهكذا.
+=========================================================================================
+                                        " - Object - Introduction"
+                                
+- الاوبجيكت هون يحتوي على بروبيرتيز وميثودز.
+     - البروبيرتيز هي بيانات ممكن تكون اي نوع من انواع البيانات (كقيمه وليست ك key).
+     - الميثودز هي الفنكشنز اللي كنا نستعملها ونعملها بايدنا.
+
+- طبعا ممكن يكون عندي نيستد اوبجيكت زي مثلاا :
+     window.location : الويندو اوبجيكت واللوكيشن اوبجيكت جوا الويندو واله خصائص وميثودز كمان.
+
+- syntax : (االطريقه العاديه)
+     let objName = {
+         //propreties
+         firstPropName : value,(البروبيرتي نيم بتبع شروط تسمية المتغيرات والفنكشن فيها والفيمه ممكن تكون اي نوع)
+         SecondPropName : value,
+         thirdPropName : value,
+         "Country of" : value,
+          ....
+        
+        //Methods
+        MethodName : function (){
+            return `Hello`;
+        }
+    }  
+
+- البروبيرتي نيم : بقدر احط اي سترنج صحيح او اي نوع بيانات قابل انه يتحول لسترنج عادي.
+
+- How To access obcjet (propreties and Metods)?
+    1- dot notaiton: 
+        - (بهاي الطريقة بقدرش اوصل للبروبيرتي في حال كان الاسم فيه سبيس او هايفن او رقم او اي رمز ف بلجأ للبراكيت)
+        - حال كان عندي دايناميك بروبيرتي نيم يعني اسم البروبيرتي متخزن بمتغير , ما بقدر استخم الدوت نوتيشن واحط اسم المتغير,
+          لازم استخدم البراكيت نوتيشين.
+       
+        console.log(objName.firstPropName);
+        console.log(objName.MethodName());
+
+    2- Bracket Notation:
+         console.log(objName["Country of"]);
+         console.log(objName["firstPropName"]);
+
+===========================================================================================================
+                                    "Nested Object (example)"
+                                
+let user = {
+    name : "Mahmood",
+    age : 24,
+    skills : ["HTML","CSS","JS"],
+    available : false,
+    addresses : {
+        ksa : "Riyadih",
+        egypt : {
+            one : "Cairo",
+            two : "Giza", 
+        },
+    },
+    checkAv : function (){
+        if (user.available === true){ //How to ascces data in method inside object
+            return "Free"; 
+        } else {
+            return "Not free";
+        }
+    }
+}
+
+console.log(user.name);
+console.log(user.age);
+console.log(user.skills[0]); //Acess With index for array in object
+console.log(user.addresses.egypt.one) //access nested object
+console.log(user["addresses"].egypt["two"]) //access nested object 
+
+console.log(user.checkAv()); // How to call method inside object
+
+============================================================================================================
+                                " - Create Object With New Keyword "
+
+- طريقه ثانيه لانشاء الاوبجيكت بالنيو كييورد(بالكونستركتر ميثود) ان كان فيه بيانات او فاضي.
+
+- syntax :
+    let user = new Object(); //empty object
+
+    let user = new Object({ //object with data
+        name : "mahmood",
+        age : 24,
+    });
+
+- How to add property/method and vlaues for empty object ?
+    let objName = {};
+
+    objName.propertyName = value;      OR
+    objName["propertyName"] = value; 
+    - طبعا لو موجود الخاصيه والها قيمه بعمللها ابديت
+
+    objName.FuncName = function (){
+        return `Hello`;
+    };
+
+============================================================================================================
+
+                                    "#083 - This Keyword"
+
+- الذيس بشكل عام بتأشر على الويندو اوبجيكت بجميع الاماكن , الا في حالات معينه زي مثلا لما اعمل انونيموس فنكنشن
+    بهاي الحاله بتصير الذيس بتأشر على الاونر للفنكشن.
+ex : 
+    document.getElementById("button").onclick = function(){
+
+        console.log(this); // بهاي الحاله الذيس بتصير ترجع الاونر الها واللي هو العنصر اللي اله اي دي بوتون.
+    };
+
+- من الاستخدامات المهمه للذيس مثلا عندي عدة عناصر او كبسات وماشي عليهم بلوب وبدي مثلا لما اكبس على كل وحده منهم
+    ارجع الكلاس تاعها , هون بها الحاله بستخدم الذيس.
+
+
+- لما انادي فنكنشن محطوط جوا اوبجيكت هون بهاي الحاله الذيس اللي جوا الاوبجيكت بتكون بتأشر على الاوبجيكت نفسه وهاي من احد الاستخدامات للذيس.
+
+============================================================================================================
+
+                                    "#084 - Create Object With Create Method"
+
+- عندي ميثون اسمها كريات تستخدم للأوبجيكتس.
+
+- هي طريقه ثانيه لعمل الاوبجيكت ولكن الهدف الاسمى منها والهدف الاهم من استخدامها هو اني مثلا في حال كان عندي اوبجيكت جاهز وبدي اعمل اوبجكيت جديد
+    هذا الاوبجيكت الجديد يتبع نفس معايير(الخصائص والميثودس) الاوبجيت القديم (شبيه بالانهريتانس) ف بهاي الحاله بستخدم الكرييت.
+
+- Ex:
+    let user = new Object({ 
+        age : 24,
+        doubleAge : function() {
+            return this.age * 2;
+        },
+    });
+
+let obj = Object.create({}) ==> هيك بنشأ اوبجيكت فاضي وما استفدت من خاصية الكرييت
+
+let copyObj = Objcet.create(user); ==> هون لسا الاوبجيت فاضي ما في ميثودس وخصائيص ولكن صار فيه اشي اسمه بروتو تايب وهو عباره عن اوبجيكت يحتوي على 
+                                        خصائص وميثودس اوبجيكت اليوز اللي هو النموذج الللي احذت منه , طبعا بقدر اوصلل لأي اشي بدي اياه عادي
+                                        كأني بتعامل مع الاوبجيكت الاصلي بس بستخدم اسم الاوبجيكت الجديد.
+copyObj.age=30;  ==>                     في حال عدلت على خاصيه موجوده بهاي الحاله ما بعدل عليها بل بضيف خاصيه جديده للاوبجيكت وبتضل القديمه بالبروتو تايب.
+
+
+============================================================================================================
+
+                                        "#085 - Create Object With Assign Method"
+
+- هون بدنا نتعلم طريقه جديده لأنشاء الاوبجيكت وهي الاسساين ميثود.
+
+let TargetObj1 = { 
+        prop1 : 24,
+        doubleAge1 : function() {
+            return this.age * 2;
+        },
+    };
+
+let obj2 = { 
+    prop1 : 24,
+    doubleAge1 : function() {
+        return this.age * 2;
+    },
+};
+
+- الاسساين هي طريقه لانشاء اوبجيكت منسوخ من اوبجيكت ثاني او مجموعة اوبجيكتس وبعد ما انشأه عادي بقدر اعدل عليه واضيف واحظف وهكذا.
+
+let FinalObj = Object.assign(TargetObj1, obj2); ==> طريقه انشاء اوبجيكت منسوخ
+
+let finalObj = Object.assign({}, Obj2, {porp2 : 3, prop3: 4}); ==> هاي الطريقه عادي في حال بدي انشأ اوبجيكت فاضي واضيف عليه
+                                                                    يعني فش داعي اعحط تارجيت اوبجيكت
+let FinalObj = Object.assign({}); ==> اوبجيكت فاضي
+
+============================================================================================================
+                                        "#086 - What Is DOM And Select Elements"
+
+- DOM => Documnet Object Model( لما الصفحه ينعمللها لود بالبراوزر البراوزر بنشألها اوبجيكت(دوكيومينت) فيه كل العناصر حتى تتمكن من التلاعب فيها)
+
+- عشان نقدر نتلاعب بعنصر محتاحين انه نوصله , من طرق الوصول للعنصر :
+    1- Find Element By ID :
+    2- Find Elements By tag name : (برجعلي ارراي حتى لو عنصر واحد بالصفحه)
+    3- Find Element By class name :
+    4- Find Element css Selectors : querySelector => لو كان عندي اكثر من عنصر بحتوي على نفس الكويري بالاقواس بهاي الخاصيه بجيبلي اول عنصر بس
+        ex :
+            let input = document.querySelector("[name='username']"); //target element by attribute
+
+    5- Find Elements Collection : querySelectorAll =>  نفس اللي فوق بس بجيب ارراي فيه العناصر كامله
+** عندي كمان ميثودز جاهزه بتجيبلي شغلات معينه بالصفحه زي:
+    6- document.title
+    7- document.body => بتجيب البودي كامل في حال احتجت اعمل اضافه تشايلد داخله والتلاعب وهكذا
+    8- document.images => بتجيبلي كل الصور اللي بالصفحه
+    9- document.links => بتجيبلي كل اللنكات بالصفحه وفي خواص جواها بقدر اوصل للنك اللي في كل وحده وهكذا
+    10- document.forms => بتجيبلي كل الفورمات بالصفحه وبقدر اوصل لكل انبوت بالفورمات والقيمه تاعتهم وهكذا.
+
+============================================================================================================
+
+                                    "#087 - Get and Set Elements Content And Attributes"
+
+- هون بدنا نتعلم كيف نجيب أو نحط محتوى للعناصر او نحط ونحذف خصائص زي كلاسات ايديهات وباقي الاتربيوتس كامله.
+
+1- innerHTML => بتتعامل مع اللي داخل العنصر ان كان تاجات اتش تي ام ال او تيكست عادي
+2- textContent => بتتعامل مع اللي داخل العنصر كأنه تيكست فقط وما بتفهم تاجات اتش تي ام ال.
+3- Change Attribute Directly :
+    ex: او كان عندي صور مثلا وجبتهم هيك بصير اعدل على الخواص تاعتهم.
+
+        document.images[0].src = "لنك معين";
+        document.images[0].alt = "اي تيكست";
+        document.images[0].title = "اي عنوان";
+        document.images[0].id = "اسم اي دي";
+        document.images[0].className = "اسم كلاس";  //There's Another ways to change and (get/set) class for element
+    **الحكي اللي فوق بنطبق ع باقي العناصر زي الفورمز واللنكس وباقي ما تبقى.
+
+4- Change Attributes With METHODS:
+
+    let myEl = document.querySelector(".element");
+
+    myEl.getAttribute("اسم الاتربيوت اللي بدي اجيبه"); => بتجيبلي قيمة الاتربيوت
+
+    myEl.setAttribute("اسم الاتربيوت اللي بدي اضيفها","thValue of Attribute");
+
+    - بخواص الاتربيوتس فوق , في حال كانت الخاصيه موجوده بعدل عليها , في حال ما طانت موجوده بضيفها مع القيمه اللي حطيتها عادي
+
+============================================================================================================
+
+                                        "#088 - Check Attributes And Examples"
+    
+- DOM [Check Attributes]:
+    - Element.attibutes["رقم الاتربيوت"].nodeValue => بترجعي الاتربيوتس بأرراي وكل عنصر من الارراي اله مجموعه من الميثودز
+    - Element.hasAttribute("href"); => مثال ,بشيكلي على الاتربيوت هذا موجود ولا لأ برجعلي ترو  وفولس
+    - Element.hasAttributes => هاي بتشيكلي اذا العنصر فيه اتتربيوتس بس بدون ما اعطيه شيئ بين الاقواس
+    - Element.removeAttribute("href") => بتحذفلي اي اترربيوت بدي اياه
+
+=============================================================================================================
+                                        "Create And Append Elements"
+
+- createElement => let myEl = document.createElement("div");
+- createComment => let myCom = document.createComment("This is Div");
+- createTextNode => let myText = document.createTextNode("Testing test");
+- createAttribute (ممكن استعمل السيت اتتربيوت بدالها) => let myAtt = document.createAttribute("data-custom"); (بعدها بستخدم سيت اتتربيوت نود عشان احط الاتتربيوت للعنصر)
+- myEl.setAttributeNode(myAtt);
+- appendChild => append text to element  
+    myEl.appendChild(myText);       
+
+    myEl.appendChild(myCom); => اضافة اتش تي ام ال كومنت
+    
+- ex : (بدي اضيف العنصر اللي انشأته وحطيت فيه تيكست وعدلت الاتربيوتس تاعونه للبودي)
+    document.body.appendChild(myEl);
+
+=============================================================================================================
+                                        "#091 - Deal With Children's"
+
+- DOM[Deal With Childrens]
+    - children => التشيلدرين بجيبلي فقط الايليمينتس ما بجيب الكومنتات او التيكست
+    - childNodes => بجيبلي العناصر(التاجز) والكومنتات والفراغات اللي بكتبها عشان انظم الكود كمان والتيكست
+    - firstChild => اول عنصر بغض النظر عن نوعه ممكن تاج اتش تي ام ال ممكن تيكست ممكن كومنت.
+    - lastChild => اخر عنصر بغض النظر عن نوعه ممكن تاج اتش تي ام ال ممكن تيكست ممكن كومنت.  
+    - firstElementChild => اول ايلمينت (فقط تاجز)
+    - lastElementChild => أخر ايلمينت (فقط تاجز)
+    
+===========================================================================================================
+                                        "#092 - DOM Events"
+                                    
+- DOM [EVENTS] => الايفينتس كثار ولكن هذول جزء منهم لفهم الفكره
+    - Use Events on HTML   => المعنى اني بقدر استخدم الايفينتس اما جوا كود الاتش تي ام ال
+    - Use Events On JS     => او استخدمها جوا كود الجافا سكربت مباشرة
+    --- onClick => كبسة الماوس
+    --- oncontextmenu => هاي الكليك يمين بالماوس وبقدر الغي المنيو اللي بتطلعلي من البروازر واحط المنيو تاعتي
+    --- onmouseenter
+    --- onmouseleave
+
+    --- onload => ex : window.onload = function (){
+                                console.log("loaded");
+                            };
+    --- onscroll => ex : window.onscroll = function (){
+                                console.log("scroll");
+                            };
+    --- onresize => تغغير حجم الشاشه => window.onresize = function (){
+                                console.log("resize");
+                            };
+    
+    --- onfocus => هاي واللي تحتي من الايفنتس وخاصه بالفورمز والانبوت تاعتها
+    --- onblur => لما اطلع من الانبوت
+    --- onsubmit => ممكن استخدمه بالفالديشن بدل ما اغلب الريكويست بالباك اند.
+    
+
+HTML EVENT EX:
+    <button id="mainButton" onclick="console.log('clicked')"> Button </button>
+    <button id="mainButton" onclick="myFunction()"> Button </button>
+OR in JS :
+    let btn = document.getElementById("mainButton");
+    btn.onClick = function () {
+       console.log('clicked');
+    };
+
+
+============================================================================================
+
+                            "#093 - Validate Form And Prevent Default"
+
+DOM [EVENTS]
+ - Validate Form Practice
+ - Prevent Default => البريفينت ديفولت تعني اني امنع الاكشن الطبيعي اللي بصير بس اعمل الايفينت المعين.
+    Ex :
+        ele.onclick = function (event){ //بقدر اممرله الايفنت واعرف معلومات عنه واسوي عليه ميثودز
+            console.log(event); => .هون راح يطبعلي معلومات عن ايفنت الاون كليك ع سبيل المثال
+            event.preventDefault(); => بهاي الحاله بدي اعتبر العنصر هو كبسة لينك , لما اعمل بريفينت ديفولت ببطل الللينك ينتقل لمكان بتمنع الفنكشيناليتي تاعته
+        }
+
+- هون بدي اتعلم كيف اسوي فالديشين من الفرونت اند قبل ما يوصل للباك اند.
+
+- طبعا من ابسط الامثله على الفاليديشن زي لما اكتب ريكوايرد للأنبوت بالاتش تي ام ال , او لما احط 
+    ماكس لينجث او مينيموم لينجث وهكذا.
+
+- لكن الجافا سكربت بتعطيني اشي متقدم للفاليديشن بميثودز وافكار برمجيه عشان امنع الداتا تنبعت في حالات معينه انا ما بدي توصل للباك
+
+*** EX : مثال على الفالديشين واستخدام البريفينت ديفولت
+
+        let Userinput = document.querySelector("[name='username']");
+        let Ageinput = document.querySelector("[name='age']");
+
+        document.forms[0].onsubmit = function (e) {
+            let userValid = false;
+            let ageValid = false;
+
+            if(Userinput.value !=="" && Userinput.value.length <= 10){
+                userValid = true;
+            }
+
+            if(Ageinput.value !=="" ){
+                ageValid = true;
+            }
+
+            if(userValid === false || ageVAlid === false){
+                e.preventDefault();
+            }
+
+        };
+
+====================================================================================================
+                               " Event Simulation - Click Focus Blur"
+
+- DOM [Events Simulation]
+    - click
+    - focus
+    - blur
+
+- هون ب فكرة محاكاه للايفنت يعني مثلا كيف انفذ الايفنت بدون تدخل مني 
+  او اني انفذ شغله معينه بناءا على الايفنت بدون تدخل مني زي الامثله تحت.
+
+- EX:
+
+        let input = document.querySelector(".two"); //جبت انبوت فيلد
+        window.onload = function (){
+            two.focus(); //يعني بصير الكيرسر عليه
+        };
+
+-Ex 2:
+       let input2 = document.querySelector(".input2); //جبت انبوت فيلد
+       input2.onblur = function () {
+            doucument.links[0].click(); //بس اطلع من الانبوت بجيب اللينكات كلها وبكبس عاللينك الاول
+       };
+
+- اقرب مثال لهاي السميوليشن هي شغلة تأكيد الكود عالتلفونات وهي مثلا
+  كل ما اكتب رقم بكل مربع بنتقل للمربع اللي بعده الكيرسر لحاله بدون تدخل مني وهذا اقرب مثال ع هذا الدرس.
+--
+
+====================================================================================================
+                                    " #095 - ClassList Object And Methods"
+
+
+- هون بدنا نحكي عن الكلاسات للعنصر والتلاعب فيها والبحث عنها وما الى ذلك.
+
+
+- DOM [Class List]:
+ - classList => ele.classList => هاي بترجعلي كامل المعلومات وشو الميثودز اللي بقدر استخدمها وبرجعة باوبجيكت
+ --- length => ele.classList => بترجعلي عدد الكلاسات بالعنصر
+ --- conatins => ele.classList.contains("ClassName"); => بترجعلي ترو او فولس موجود الكلاس او لا
+ --- item(index) => ele.classList.item("اي اندكس بدي اياه"); => بروح عالعنصر وبجيبلي الكلاس اللي عند الاندكس اللي اعطيته اياه
+ --- add => ele.classList.add("اسم كلاس انا بدي اضيفه","class2","class3") => بضيفلي كلاس عالعنصر وطبعا بقدر اضيف اكتر من كلاس.
+ --- remove => ele.classList.remove("اسم كلاس انا بدي احذفه","class2","class3")  => بحذفلي كلاس من العنصر وطبعا بقدر احذق اكتر من كلاس ولو مش موجود الكلاس عادي كا يبصير اشي.
+ --- toggle => ele.classList.toggle("اسم كلاس"); => بتعامل مع كلاس واحد بس اذا موجود بحذفه واذا مش موجود بضيفه
+
+====================================================================================================
+                                " - #096 - CSS Styling And Stylesheets "
+            
+- هون بدي اتعلم التعامل مع الستايل باستخدام الجافا سكربت.
+
+1 - Normal method To style css element (EX) :
+       ele.style.color = "red"; //خاصيه مكونه من كلمه واحده بس 
+       ele.style.fontWeight = "bold"; //خاصيه مكونه من كلمتينه بستخدم الكاميل كيس بكتابتها
+
+2 - Method To write style for element together not line by line (EX);
+       ele.style.cssText = "font-weight: bold; color:green; display:block;" 
+
+3 - remove and set css property from javaScript [Inline , Stylesheet]: 
+
+       ele.style.removeProperty("color"); //remove inline color Property
+       ele.style.setProperty("font-size","40px","important"); //add inline color Property
+       *** هاي فيها خاصية الاولويه عشان يعمل اوفررايد على باقي الستايلات
+
+    - how to edit/delete/add properties that appear in style sheet(external):
+    
+       document.styleSheets[0].rules[0].style.removeProperty("line-height");
+       document.styleSheets[0].rules[0].style.setProperty("background-color","red");
+
+====================================================================================================
+                                    "#097 - Before, After, Prepend, Append, Remove"
+
+- هون بدنا نتعامل مع العناصر اللي عنا هاي نفس فكرة اللابند تشايلد بس هاي متقدمه وفيها ميثودز اكثر ومتقدمه للتعامل مع العنصر
+
+- Dom [Deal With elements]
+   - before [element || string] => ele.before("string او element"); => يعني بحط سترنج او عنصر قبل العنصر اللي انا عنده
+   - after [element || string] => ele.after("string او element"); => يعني بحط سترنج او عنصر بعد العنصر اللي انا عنده
+   - append [element || string] => ele.append("سترنج او عنصر") => بضيف العنصر او السترنج داخل الاب بالاخر
+   - prepend [element || string] => ele.prepend("سترنج او عنصر") => بضيف العنصر او السترنج داخل الاب بالاول
+   - remove => ele.remove() => بشيل العنصر كامل من الدوم تري بعكس لما اقله ديسبلاي نون
+=
+
+=======================================================================================================
+                                "#098 - DOM Traversing"
+
+- هون بدنا نتعلم الانتقال بين العناصر والوصول الها بطرق مختلفه ومتنوعه عشان اسوي عليها عمليات مختلفه حسب المطلوب.
+
+-Dom [Travesrsing]
+ - nextSibling => ele.nextSibling => الشقيق الثاني المباشر لهذا العنصر بغض النظر شو كان عنصر او تيكست او كومنت
+ - previousSibling => نفس اللي فوق بس قبله بجيب
+ - nextElementSibling => نفس الفكره بس هون بجيب النيكست ايليمنت (عناصر بس)
+ - previousElementSibling  نفس الفكره بس هون بجيب البريفيوس(اللي قبله) ايليمنت (عناصر بس)
+ - parentElement => ele.parentElement => هاي بتوصلني للعنصر الاب للعنصر اللي بدي اياه وبسخدمها مثلا في حالة الاكس لما بدي اسكر بوب اب ويندو
+
+========================================================================================================
+                                " - DOM Cloning (االاستنساخ)"
+- Dom [Cloning]
+       - cloneNode(Deep)
+
+Ex :
+       let myP = document.querySelector("p").cloneNode(); => هاي بوخذ نسخه من العنصر اللي جايبه بالاتتريبوتس تاعته كلها 
+                                                            الديفولت بين الاقواس فولس يعني ما بوخذ اللي داخل العنصر االلي معموله نسخ
+                                                            بس بوخذه هو , اما اذا حطيتها ترو بنسخ اللي داخل العنصر معه كمان
+
+========================================================================================================
+
+                                    " - AddEventListener "
+
+- الادد ايفنت ليسنر بتضيف ايفينت على العنصر اللي بدي اياه.
+- قبل كنت عادي اتارجت العنصر واحطله ايفيينت ويساوي انونيموس فنكشن او اخليه يساوي فنكشن جاهز انا عامله برض بصير.
+- بهاي الطريقه الاعتياديه لو احتحت احط نفس الايفينت على العنصر نفسه يعني مثلا مرتين
+  ايفينت كليك , بهاي الحاله راح اواجه مشكله الا وهي انه بس الايفينت الاخر رراح يتنفذ عالعنصر 
+  بالتالي باستخدام الايفينت ليسنر بقدر اضيف نفس الايفينت للعنصر اكثر من مره عادي وراح تتنفذ بكل المرات.
+
+- Dom[Add Evcent Listener]
+    - add Event Listener
+    - events name without on
+    - attach multiple event
+    - Error Test
+    
+- Search:
+    - Capture & Bubbling JavaScript
+    - removeEventListener
+
+- بالطريقه العاديه كنا نستخدم الايفنت باستخدام اون ومن ثم اسم الايفينت بالادد ايفنت ليسنر لا ما بستخدم الاون:
+       Ex : 
+            ele.onclick = function ( ){};
+
+- هون بدي ابلش بطريقة كتابة الادد ايفينت ليسنر (Syntax) :
+  --    myEle.addEventListener("click",function(){ => استخدام الانونيموس فنكشن
+            //Code here
+        })
+  
+  --    myEle.addEventListener("click",UserFunction); => باستخدام فنكشن انا مسويه
+
+- لما اعمل هيك بالطريقه الاعتياديه :
+    window.onload = "mahmood"; => هون ما بصير اي اكشن وما بعطيني ايررور.
+    ele.addEventListener("click","string"); => هون بعطيني ايررور وما مش زي الاعتياديه
+
+- اكبر واعظم واهم استخدام للأدد ايفنت ليسنر هو اني احط ايفنت على عنصر لسا ما اتنشأ , يعني راح يتم انشاءه بالدوم 
+  بناءاً على اكشن معين , لما استخدم الطريقه العادي واحط ايفنت على عنصر مش موجود بعطيني ايرور , ولكن
+  باستخدام الادد ايفنت ليسنر بكون الوضع لووز وهو اهم استخدام.
+
+  Ex (طريقه عمل ايفنت على عنصر سيتم انشاءه) :
+        document.addEventListener("click",function (e){
+            if (e.target.className === "clone"){
+                console.log("Iam Cloned");
+            }
+        })
+
+=================================================================================================================
+                                        "#103 - Alert, Confirm, Prompt"
+- هاي الشغلات مش راح استخدمها , ولكن من باب العلم بالشيئ
+- BOM[Browser Object Model]
+    - alert (message) => Need No Response Only Ok Available
+    - confirm (message) => Need Response And Return  Boolean
+    - Prompt (Message, Default Message[placeholder]) => Collect Data 
+
+-بقدراكتب بثلث طرق عادي طالما انا بالجلوبال سكوب:
+window.alert("test");
+this.alert("test");
+alert("test");
+
+
+--->
