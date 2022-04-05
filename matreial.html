@@ -828,5 +828,195 @@ window.alert("test");
 this.alert("test");
 alert("test");
 
+==================================================================================================================
+                                            " #104 - setTimeout and clearTimeout"
+- هون بدنا نحكي عن ثنين فنكشنز من فنكشنز الويندو الست تايم اوت والكلير تايم اوت:
+
+1- السيت تايم اوت هي بتسمحلي اشغل فنكشن معين بعد وقت معين انا بحدده
+
+Syntax => setTimeOut(function(){}, Timeout[Mili second], Additional Params[الاشياء اللي بتسقبلها الفنكشن في حال كان بوخذ ارجيومنتس])
+ex => setTimeOut(function(){console.log("msg");},3000)
+ex2 => setTimeOut(sayHello,3000); => هاي مثال على فنكشن جاهز انا مسويه وبدي استخدمه
+ex3 => مثال على فنكشن بوخذ باراميترز
+  let counter = window.setTimeout(function(name, age){console.log(`Hello ${name} ur age is ${age}`)}, 3000,"mahmood",23)
+-------------------------------
+
+2- الكلير تايم اوت بوقف عمل السيت تايم اوت:
+يعني مثلا السيت تايم اوت بشتغل خلال 5 ثواني , لو بهاي اللحظه استخدمت
+الكلير تايم اوت بكبسه مثلا بوقف عمل السيت تايم اوت.
+
+syntax =>  clearTimeOut(هون بوخذ اسم السيت تايم اوت اللي المتغير بأشر عليها وهو نمبر (اي دي ))
+
+ex : 
+    let btn = document.querySelector("button");
+    btn.onclick = function(){
+        clearTimeout(counter);
+    }
+
+==================================================================================================================
+                                            " #104 - setInterval and clearInterval"
+- نفس مبدأ السيت تايم اوت والكلير تايم اوت , ولكن الفرق الجوهري بينهم انه 
+الانتيرفال هون بتتنفذر مرارا وتكرارا مره بعد ما يعدي الوقت اللي حددته بالثواني
+ويتم ايقافها بالكلير انتيرفال.
+
+Ex: 
+    let counter = window.setInterval(function(name, age)
+                        {console.log(`Hello ${name} ur age is ${age}`)}
+                        , 3000,"mahmood",23);
+
+    let btn = document.querySelector("button");
+
+    btn.onclick = function(){
+        clearInterval(counter);
+    }
+
+-------------------------------------
+Ex2 : مثال بدون استخدام زر للايقاف بل سيتم التوقف بناءا على شرط معين
+
+    let div = document.querySelector("div");
+
+    function countdown(){
+        div.innerHTML -= 1 ;
+        if(div.innerHTML === "0"){
+            window.clearInterval(counter);
+        }
+    }
+
+    let counter = window.setInterval(countdown,2000);
+
+====================================================================================
+                                " #106 - Window Location Object"
+- هون بدي اتعامل مع اهم الاوبجيكتس اللي موجوده جوا الويندو اوبجيكت , وهو اللوكيشن اوبجيكت
+- عن طريق اللوكيشن اوبجيكت والبروبيرتيز والميثودس الموجوده فيه راح نقدر نتعامل مع الurl ونتحكم فيه بشكل كامل
+
+console.log(window.location); => بعطيني كل الميثودز والبروبيرتز الخاصه باللوكيشن
+
+console.log(location.href); => (Get Href)بتجيبلك اللينك تاع الصفحه اللي انت فيها
+location.href = "https://google.com"; => set Href
+location.href = "/#idName"; => هون يعني اني بقدر اروح على سكشن معين عليه اي دي بصفحتي
+location.href = "سكشن معين بصفحه ثانيه عادي نفع";
+
+console.log(location.host); => بجيبلك اسم الموقع تاعك والبورت اللي انت داخل منه
+console.log(location.hostname); => هون بس بجيب اسم الموقع تاعك
+عن طريق الهوست بقدر اغير بس الهوست نيم واسي باقي اللينك زي ما هي بدون ما اتحكم فيها
+
+console.log(location.protocol); => https / http (بطلعلي واحد منهم);
+location.protocol = "https"; => بقدر اغيرالبروتوكول
+
+console.log(location.hash); => بقدر اجيب الهاش تاع الصفحه اللي بعد دوت كوم
+location.hash = "/#idName"; => هون بقدر اغير الهاش تاع الصفحه
+
+window.loaction.reload(); => بتعمل ريلود للصفحه
+
+عندي هون اخر ميثودين بعملو تغيير للurl تاعي كل وحده بطريقه مختلفه: 
+
+window.loaction.replace(url) => هون بنقلني ليو ار ال انا بختاره وبشيل الصفحه اللي كنت فيها من الهيستوري بعكس الhref اللي بتخليها بالهيستوري
+window.loaction.assign(url) => ما بتحذف الهيستوري وبتخليها
+
+==============================================================================================================================
+                                                        "Window Open And Close"
+
+- BOM[Browser Object Model]
+ - open(
+      URL [Opt], => اي لينك موقع|صورة|بي دي اف|فيديو (الديفولت فيها اباوت::بلانك)
+      Window name Or Target Attr [Opt], => فقط مُعرف ملوش علاقه بالتايتل للويندو اللي راح تنفتح وممكن احط التارجت زي اللنك تاعتك اندر سكور بلانك تاب جديده
+      Window Featers[Opt], => خصائص التاب اللي بدي افتحها زي طولها عرضها هل هي قابله لتغيير الحجم ومكانها وين بالصفحه 
+      History Replace); => هون عملية حفظ الصفحه السابقة بالهيستوري او لا وبتقبل ترو او فولس الديفولت ترو 
+ - close(); => فقط بتسكر الويندو اللي انت فيها وبشرط تكون انفتحت عن طريق الاوبين(عن طريق الجافاسكربت)
+ - Window Features:
+    - Width[nume];
+    - height[num];
+    - left[num];
+    - top[num];
+
+
+
+- عن طريق الاوبين انا بقدر افتح ويندو جديده واتحكم بالخواص تاعتها: 
+
+
+**Search 
+  - Window.open Window Features
+==============================================================================================================================
+                                            " #108 - Window History Object"
+
+- الهيستوري اوبج بعطيني شوية خواص اقدر اتعامل مع العناصر الموجوده بالهيستوري.
+
+console.log(window.history); => بجيبلي كل المعلومات عن الهيستوري اوبجيكت
+
+history.length; => هذا بجيبلك عدد الصفحات اللي بالهيستوري بما فيهم الصفحة اللي انت فيها
+
+history.back() => هاي ميثود بترجعك صفحه لورا عادي جدا
+
+history.forward() => ميثود بتقدمك صفحه لقدام بالهيستوري ولو مفش صقحه ما بعمل اشي
+
+history.go(الاندكس تاع الصفحه من الصفحات اللي موجوه بالهيستوري);
+    - الاندكس صفر هي الصفحه اللي انا فيها  just reload the page. 
+- الاندكس 1 هي الصفحه اللي قدامي زي الفوروورد 
+- الاندكس -1 هي الصفحه اللي ورا زي الباك
+
+**Seqrch For :
+  - pushState() + replaceState();
+
+  The browser’s API will also allow you to manipulate the history state
+  by adding a new entry pushState or overwrite the current one using replaceState.
+  Manipulating the history will not cause the page to reload.
+
+  - باسخدام البوش ستيت والربليس ستيت بقدر اضيف ايلء متقدمه تزيدلي عملية التحكم بالهيستوري اوبجيكت
+
+1- pushState(); => بتسمحلي اضيف صفحه على الهيستوري بدون ما ازورها
+     history.pushState: It will leave the currently displayed page as is,
+     while updating the browser’s address bar with the new URL. It adds a new history entry,
+     without changing what is currently on the page.
+
+    EX : 
+        const state = { user: 12 };
+        const title = 'Samer';
+        const url   = '/mahmood';
+
+        history.pushState(null, null, url);
+
+2- history.replaceState();
+    Another way to change your browser’s history state is to use the replaceState function.
+     It works almost exactly as the pushState method mentioned above. The big difference is,
+      that while pushState will create a new entry in the browser’s history,
+    replaceState will onle replace the current state.
+
+    As a side effect of this, using the replaceState method
+     will change the URL in the address bar,
+     without creating a new history entry.
+
+========================================================================================================
+                                    " #109 - Scroll, ScrollTo, ScrollBy, Focus,"
+
+- BOM[Brower Obect Model];
+   - stop(); => بقدر اثناء تحميل الصفحه استخدم هاي الميثود اللي بتسمحلي اوقف تحميل الريسورسيز والصوره بالصفحه
+   - print(); => ميثود بسيطه بتسمحلي اعمل برنت للصفحه اللي انا فيها زي لما اكبس رايت كليك وبرنت
+   - focus(); => هون بدي اعمل فوكس على ويندو معينه وافوك عليها
+        ex:
+            let myNewWIndow = window.open("https://google.com","","width=500,height=500");
+            myNewWindow.focus();
+            myNewWindow.close();
+
+   - scrollTo(x, y || Options); => هاي واللي تحتها نفس الاشي ولكن بتفرق بدعم المتصفحات 
+   - scroll(x, y || Options); => هاي واللي فوقها نفس الاشي ولكن بتفرق بدعم المتصفحات بتوديني على احداثيات معينه بالصفحه.
+   - scrollBy(x, y || Options); => هاي بتخليني اتحرك كل مره بعدد الاحداثيات اللي انا حاطها مش مره وحده زي سكرول تو
+
+
+EX: (بعد زيادة الويدث والهايت للصفحه كامله)
+    Window.scrollTo(1000, 500); => بتمشي على الاحداثي السيني والصادي لعند هاي الاحداثيات
+    Window.scrollBy(1000, 500); => 
+
+Ex: (طريقة ثانيه في السكرول مع اضافة الاوبشينز وهذا الاشي ينطبق على كل السكرول)
+    window.scrollTo({
+            left:500,
+            top: 200,
+            behavior:"smooth"
+        });
+
+
+
+*** في تريكات كثيره وحلوه خاصه بالسكرولينج لازم اشوفها واجربها عن التطبيق
+
+
 
 --->
