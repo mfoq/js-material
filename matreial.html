@@ -79,6 +79,9 @@ ex :
 1- includes(val,start [opt]); 
 2- startsawith(val,start [opt]); 
 3- endsawith(val,length[opt]); //انا بقدر احددل طول محدد من السترنج
+4- string.replace(searchValue, newValue); =>بتبدل لس اول ظهورmethod searches a string for a value or a regular expression.returns a new string with the value(s) replaced.does not change the original string.
+string.replaceAll(searchValue, newValue); => نفس فكرة اللي فوقها بس بتبدل الكل
+
 ============================================================================================
                                     "#035 - Conditional Ternary Operator"
 - اختصار للاف بسطر واحد
@@ -156,6 +159,7 @@ ex :
 - لو عندي باراميتر واحد بقدر اشيل القوس عادي.
 ===========================================================================================
                                     " Scope - Lexical(static)"
+
 - الفكره هون انه لو كان عنا 2 فنكشنز جوا بعض , الاب ما بقدر يوصل للمتغيراتت اللي جوا الابن بس العكس بنفع.
 ===========================================================================================
                                     "#071 - Higher Order Functions - (Map)"
@@ -211,7 +215,7 @@ Exmples:
   ----------- Starts from index 0 if an intialValue is provided.
   ----------- OtherWise, it starts From index 1.
   - Array => The Array.
-  -InitalValue : هاي القيمه اللي بدي ابلش عندها بالجامع اذا ما حطيت قيمه خلص بوخذ اول عنصر وبحطها بالجامع وببلش يجمع العنصر الثاني
+  -Inital Value : هاي القيمه اللي بدي ابلش عندها بالجامع اذا ما حطيت قيمه خلص بوخذ اول عنصر وبحطها بالجامع وببلش يجمع العنصر الثاني
                 اما اذا حطيت قيمه بوخذها هي وببلش من العنصر الاول يجمع عليه.
 =========================================================================================
                                      "Higher Order Functions - (ForEach)"
@@ -266,6 +270,9 @@ Exmples:
     2- Bracket Notation:
          console.log(objName["Country of"]);
          console.log(objName["firstPropName"]);
+
+*** How To Get All Object Keys in Array to loop around them ?
+        let arr = Object.keys(myObj);
 ===========================================================================================================
                                     "Nested Object (example)"
                                 
@@ -325,7 +332,7 @@ ex :
 - لما انادي فنكنشن محطوط جوا اوبجيكت هون بهاي الحاله الذيس اللي جوا الاوبجيكت بتكون بتأشر على الاوبجيكت نفسه وهاي من احد الاستخدامات للذيس.
 ============================================================================================================
                                     "#084 - Create Object With Create Method"
-- عندي ميثون اسمها كريات تستخدم للأوبجيكتس.
+- عندي ميثود اسمها كريات تستخدم للأوبجيكتس.
 - هي طريقه ثانيه لعمل الاوبجيكت ولكن الهدف الاسمى منها والهدف الاهم من استخدامها هو اني مثلا في حال كان عندي اوبجيكت جاهز وبدي اعمل اوبجكيت جديد
     هذا الاوبجيكت الجديد يتبع نفس معايير(الخصائص والميثودس) الاوبجيت القديم (شبيه بالانهريتانس) ف بهاي الحاله بستخدم الكرييت.
 - Ex:
@@ -337,7 +344,7 @@ ex :
     });
 let obj = Object.create({}) ==> هيك بنشأ اوبجيكت فاضي وما استفدت من خاصية الكرييت
 let copyObj = Objcet.create(user); ==> هون لسا الاوبجيت فاضي ما في ميثودس وخصائيص ولكن صار فيه اشي اسمه بروتو تايب وهو عباره عن اوبجيكت يحتوي على 
-                                        خصائص وميثودس اوبجيكت اليوز اللي هو النموذج الللي احذت منه , طبعا بقدر اوصلل لأي اشي بدي اياه عادي
+                                        خصائص وميثودس اوبجيكت اليوزر اللي هو النموذج الللي احذت منه , طبعا بقدر اوصلل لأي اشي بدي اياه عادي
                                         كأني بتعامل مع الاوبجيكت الاصلي بس بستخدم اسم الاوبجيكت الجديد.
 copyObj.age=30;  ==>                     في حال عدلت على خاصيه موجوده بهاي الحاله ما بعدل عليها بل بضيف خاصيه جديده للاوبجيكت وبتضل القديمه بالبروتو تايب.
 ============================================================================================================
@@ -355,7 +362,7 @@ let obj2 = {
         return this.age * 2;
     },
 };
-- الاسساين هي طريقه لانشاء اوبجيكت منسوخ من اوبجيكت ثاني او مجموعة اوبجيكتس وبعد ما انشأه عادي بقدر اعدل عليه واضيف واحظف وهكذا.
+- الاسساين هي طريقه لانشاء اوبجيكت منسوخ من اوبجيكت ثاني او مجموعة اوبجيكتس وبعد ما انشأه عادي بقدر اعدل عليه واضيف واحذف وهكذا.
 let FinalObj = Object.assign(TargetObj1, obj2); ==> طريقه انشاء اوبجيكت منسوخ
 let finalObj = Object.assign({}, Obj2, {porp2 : 3, prop3: 4}); ==> هاي الطريقه عادي في حال بدي انشأ اوبجيكت فاضي واضيف عليه
                                                                     يعني فش داعي اعحط تارجيت اوبجيكت
@@ -1046,5 +1053,1692 @@ EX :
         console.log(b);
         console.log(c);
         console.log(Favorite);
+==============================================================================================================================
+                                    "#123 - Set Data Types And Methods"
+- Set Data Type : (بتشبه الأرراي)
+syntax : new Set(Iterable) => الاي تيرابيل زي الارراي والسترنج و
+  -- Set is Object To Store unqiue Values(بدون تكرار للقيم, يحذف المكرر)
+  -- Canot access Elements By index (undefind)
+  
+Properties :
+   - size => عدد العناصر بالسيت زي اللينجث
+        myUniqueData.size; 
 
---->    
+Methods : 
+   - add
+   - delete
+   - clear
+   - has => هاي بتبحث عن العنصر اذا موجود بالسيت او لا وهي افضل من الانكلود
+
+Ex :
+ **create and add for set :
+
+    - let myData = [1,2,1,1,3];
+    - let myUniqueData = new Set([1,2,1,1,3]); //بحذف المكررات
+      or myUniqueData = new Set(myData);
+    - let myUniqueData = new Set().add(1).add(1).add(2).add(3); //نفس اللي فوق عادي بس باستخدام الادد اثناء الانشاء
+
+    - myUniqueData.add(1).add(1).add(2).add(3); //اضافه بعد الانشاء 
+      myUniqueData.add("mahmood");
+
+**delete from set :
+       myUniqueData.delete("m"); => بختار العنصر اللي بدي احذفه لاني بقدرش استخدم الاندكس وبرجعلي ترو اذا لقى العنصر وفولس اذا ما لقاه
+
+**clear set :
+        myUniqueData.clear();
+
+** has method(like include in string and array)
+       console.log(myUniqueData.has("a")); //true , false
+
+        console.log(myUniqueData.has("a".toUppercase())); //مثال يعني بقدر استخدم اي اشي ضمن الاقواس ابحث عنه
+
+========================================================================================================================
+                                    "#124 - Set vs WeakSet And Garbage Collector"
+
+-" the WeakSet is Weak,
+   Meaning references to object in a WeakSet are held Weakly.
+   if No other references to an object stored in the WeakSet exist,
+   those Object can be Garbage Collector ."
+
+-----
+Set      => can Store Any Data Values
+WeakSet  => Collection of Objects Only(بس ارراي اوف اوبجيكتس)
+-----
+Set      => have Size Property.
+WeakSet  => Does Not have Size Property.
+-----
+Set      => Have Keys(Values), Entries. (keys is Alias for Values here).
+WeakSet  => Does Not have clear, keys, Values, And Entries.
+-----
+Set      => Set Can use ForEach.
+WeakSet  => cannot use ForeEach.
+
+Usage: Store Objects And removes them once the become inaccessible.(يعني مفش اكسيس عليهم ابدا)
+
+**Examples :
+
+
+   //Type Of Data
+   let mySet = new Set([1,,1,1,2,3,"A","A"]);
+   console.log(mySet):
+
+   let myWeakSet1 = new WeakSet([1,,1,1,2,3,"A","A"]); //Error just can hold objects 
+   let myWeakSet2 = new WeakSet([{a:1 ,b:2}]);
+   console.log(myWeakSet2);
+------------
+   
+
+   //Size
+   console.log(mySet.size):
+
+------------
+
+   //Values + Keys Alias
+    let iterator = mySet.keys(); => الكيز بقدر استخدم فاليوز بدالها , وهون بترجعلي اشي اسمه سيت ايتيراتور,وهذا الاشي اله ميثودز عشان اوصل للعناصر بالسيت لانها ما بتتعامل مع الاندكس
+                                    زي ميثود النيكست بالمثال تحت والفاليو
+
+    console.log(iterator.next().value); => بترجعلي القيمه الاولى بس
+    console.log(iterator.next().value); => بترجعلي القيمه الثانيه بس
+    console.log(iterator.next().value); => بترجعلي القيمه الثالثه بس
+    console.log(iterator.next().value); => بترجعلي القيمه الرابعه بس
+    console.log(iterator.next().done); => بترجعلي قيمة الدن اذا الاتيراتور اكتمل ولا لأ
+    console.log(iterator.next()); => هاي بترجعلي شو العنصر اللي وصلتلو وسو حالة الاتيراتور في بروبيرتي اسمها دن بتكون ترو اذا خلصت العناصر ووصلت لأخر عنصر وفولس اذا لا
+
+
+
+------------
+
+   //Foreach
+        mySet.forEach((el) => console.log(el));
+
+=============================================================================================================
+                                        "#125 - Map Data Type Vs Object"
+
+- Syntax : new Map(iterable With key/vale):يعني ارراي اوف ارايز وكل ارراي من الداخليات فيهم قيمتين وحده للكي ووحده للفاليو
+-- Map VS Object 
+                                https://www.geeksforgeeks.org/map-in-javascript/
+-----------
+Map      => Does Not Contain Key By Default[الكي والفاليوز هي اللي انا بضيفها فقط]
+Object   => Has Default Keys
+-----------
+Map      => Key Can Be Anything [Function, Object, Any Primitive Data Types](In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods. There are 7 primitive data types: string, number, bigint, boolean, undefined, symbol, and null.)
+Object   => String Or Symbol
+-----------
+Map      => Orderd By Insertion
+Object   => Not 100% Till now
+-----------
+Map      => Get Items by Size
+Object   => Need To do Manually => let Size = Object.keys(myObj).length;
+-----------
+Map      => Can Be Directly Iterated
+Object   => Not Directly And Need To use Object.Keys() And So on => الاوبجيكت دوت كيز بترجعلك كل كيز الاوبجيكت بأرري وبلوب عليهم
+-----------
+Map      => Better Performance When Add Or REmove Data
+Object   => Low Performance When Comparing With Map
+
+//keys & Defaulf keys:
+    ** How To create traditonal Object Withoit Default Keys (like map) ?
+            let myEmptyObject = Object.create(null);
+
+    **How To create Map using Iterable:
+        // map1 contains 
+        // 1 => 2
+        // 2 => 3
+        // 4 -> 5
+        var map1 = new Map([[1 , 2], [2 ,3 ] ,[4, 5]]);
+        
+        console.log("Map1");
+        console.log(map1);
+
+//Key Type:
+    let myObject = {
+            10 : "number",
+            "10" : "string" => بهاي الحاله بالاوبجيكت الثانيه بتعمل اووفرررايت عالاولى لانها بتحولها لسترنج دايركت بصيرله كاستنج وبتنشطب الاولى من الاوبجيكت
+        };
+    console.log(myObject[10]); //راح يجيبلي الثانيه
+
+
+    let myMap = new Map();
+    myMap.set(10,"Number");
+    myMap.set("10","String"); => هون ما بصير عندي عملية اوفررايت كل وحده تعامل كأنها كي وفاليو لحالها
+    myMap.set(ture,"Boolean");
+    myMap.set({a: 1, b: 2},"Object");
+    myMap.set(function doSmth() {},"Function");
+
+    console.log(myMap.get(10)); => بجيبلي الاولى عادي
+    console.log(myMap.get("10")); => بجيبلي الثانيه عادي
+    
+============================================================================================================
+                                                    "#126 - Map Methods"
+- Methods :
+--- set
+--- get
+--- delete
+--- clear
+--- has
+
+- Properties :
+--- Size
+
+
+ 
+create Map WithOut Iterable
+let myMap = new Map();
+
+//create Map With Iterable
+let myMap = new Map([
+   [10,"number"],
+   ["Name","String"],
+   [false,"boolean"]
+]);
+
+//set
+myMap.set(20 , "number");
+myMap.set("id","String");
+
+console.log(myMap);
+
+//get
+console.log(myMap.get(10));
+console.log(myMap.get("Name"));
+
+
+
+//Delete 
+console.log(myMap.delete("Name")); //the function Will Return true if it find the key and delete the Pair
+
+
+//clear
+myMap.clear();
+
+//has
+console.log(myMap.has(false)); //it will check and sreach this key , return true if it found , false if not(ملوش دخل بترو او فولس كقيمه هو ببحث عن الكي)
+console.log(myMap.has("Name"));
+
+//size 
+console.log(myMap.size);
+============================================================================================
+                                        " #127 - Map Vs WeakMap"
+
+- WeakMap allows Garbage collector To Do Its Task But Not Map.
+-  طبعا هون وبالسيت والويك سيت الميثودز مختلفه بين الويك والعادي اشياء موجوده هون واشياء لا والعكس وبقدر اشوفهم لما اطبعهم بالكونسول من خلال البروتو تايب
+
+------ (الفرق الجوهري)
+Map     => Key Can be Anything
+WeakMap => Key can be Object Only.
+------
+
+Ex :
+  let UserObject = {theName : "Mahmood"}l
+  let myMap = new Map();
+  myMap.set(UserObject, "Object Value");
+  UserObject = null; //Override The Reference (الميموري مش راح تشيله لانه متخزن داخل الماب خلص)
+  console.log(myMap);
+--------------------------------------------
+
+  let UserObject = {theName : "Mahmood"}l
+  let myWeakMap = new WeakMap();
+  myWeakMap.set(UserObject, "Object Value");
+  UserObject = null; //Override The Reference (هون بالويك ماب بنشال من الميموري بالكوليكت قاربيج مش بمزاجي يتم الاشي اوتوماتيكي)
+  console.log(myWeakMap);
+
+
+*** Notice : طبعا في بعض الميثودز مش موجوده بالويك سيت والويك ماب لانهم مربوطات بالقاربيج كوليكتور بالتالي السايز مش ثابت ممكن ينحذف الاوبجيكت من الماب او السيت وهالحكي كمان 
+            لبعض الميثود الباقيات زي الفور ايتش انه بقدرش يمشي على قيم محذوف من القاربيج وهكذا مان.
+
+========================================================================================================
+                                                "#128 - Array.from Method"                                     
+- Array.From => من معناها تعني انه بيعملك ارراي من الايتيرابول
+Syntax : 
+    Array.from(Iterable[string,set,Another Array], MapFunc[Higher Order Function], This[بتعود على الأرراي])
+  - Variable
+  - String Numbers
+  - Set
+  - Using The Map Function
+  - Arrow Function
+  - Shorten The Method + use Arguments
+
+Examples :
+        console.log(Array.from("Mhmood")); //هون انشأنا أرراي من السترنج
+
+        console.log(Array.from("123456",function(n){ // هون انشأنا أأرري من السترنج ونفذنا عمليه على كل عنصر بالأأرراي قبل ما يتم اخراجه حولناه لرقم باستخدام 
+                                                     اليوناري اوبيراتور ومن ثم جمعناه على نفسه
+            return +n + +n;
+        }));
+
+       console.log(Array.from("123456", n => +n + +n )); //Same Exxample Using Arrow Function
+
+
+Example :
+
+        //Delete the repeated values and keep one just and put them inside Array
+        let myArray = [1,1,1,2,3,4,5]; 
+
+        let mySet = new Set(myArray);
+
+        console.log(Array.from(mySet));
+-------
+        console.log([...new Set(myArray)]); // Same Question using Spread Operator in one Line
+
+Ex : (مثال متقدم في استخدام الأأرري فروم وهون بدي استخدم بروبيرتي أرجيومنتس هي بيلت انت بالجافاسكربت داخل الفنكشن)
+
+        function af(){
+            console.log(arguments);
+        }
+
+        af("Maahmood","Ahmad",1,2,3); //['Maahmood', 'Ahmad', 1, 2, 3]
+
+===============================================================================================
+                                            "#129 - Array.copyWithin Method"
+
+- هاي الميثود بتنسخ جزء معين من الارراي وبحطه بنفس الارراي اللي انت فيها وبنصيل العناصر اللي حطيت العناصر المنسوخه مكانهم
+  بدون استخدام السبلايس والسلايس وهاي الامور , الميثود ما بتزيد عناصر الأرراي وبتحذف الزياده
+
+- Syntax :
+  Array.copyWithin(Target, Start => Opt, End => Optional);
+
+  ** Target : المكان اللي بدي احط فيه العنصر او المجموعه من العناصر المنسوخه
+             اذا التارجيت اكبر او يساوي لينجث الأرراي بهاي الحاله ما راح يصير اي اكشن
+             بقدر استخدم السالب هون وبالستارت والاند عادي
+        
+
+  ** Start : المكان اللي بدي ابلش نسخ من عنده
+            اذا ما كتبته ببلش من الاندكس صفر
+    
+  ** End : المكان اللي بوقف عنده نسخ
+          النهايه ما بتكون داخله مع النسخ
+          اذا ما كتبناه بكمل للنهايه
+
+
+EX :
+        let myArray = [10,20,30,40,50,"A","B"];
+        myArray.copyWithin(3,5,7); 
+        console.log(myArray); // (7) [10, 20, 30, 'A', 'B', 'A', 'B']
+
+
+Ex :
+        let myArray = [10,20,30,10,20,30,40,50];
+        myArray.copyWithin(3);
+        console.log(myArray); // [10, 20, 30, 10, 20, 30, 40]
+
+Ex :
+        let myArray = [10,20,30,40,50,"A","B"];
+        myArray.copyWithin(4,-1); //Copy last Ele and insert it inside index 4
+        console.log(myArray); //[10, 20, 30, 40, 'B', 'A', 'B']
+
+Ex :
+        let myArray = [10,20,30,40,50,"A","B"];
+        myArray.copyWithin(1,-2); //will copy from index -2 to the end
+        console.log(myArray); //[10, 'A', 'B', 40, 50, 'A', 'B']
+
+Ex :
+        let myArray = [10,20,30,40,50,"A","B"];
+        myArray.copyWithin(1,-2,-1); //will copy just index -2 because i write the end index
+        console.log(myArray); //[10, 'A', 30, 40, 50, 'A', 'B']
+
+=====================================================================================================================
+                                                "#130 - Array.some Method"
+- هاي الميثود بتمسك الأرراي بتطبق على كل عنصر فيها فنكشن اذا عنصر واحد بس على الاقل كان بنطبق
+  عليه الشرط بالفنكشن بترجعلك ترو , يعني بعض النظر عن عدد العناصر اللي بنطبق الشرط عليها , يعني بتمشي الفنكشن
+  على كل عنصر من عناصر الارراي لحد ما  تلاقي اول ترو بتوقف.
+
+- Syntax : 
+     Array.some(callbackFunc(Element, Index, Arrat){}, This Argument); => الارراي هون بكتب اسم الأرري مش بكتب كلمة أرراي بس
+     --- CallbackFunc => Function To run On Every Element on The Given Array
+     ------ Element => The Currrnt Element To Proccess
+     ------ Index   => Index Of Current Element
+     ------ Array   => The Current Array Working With
+     --- This Argument => Value To use As This When Executing CallbackFunc => اشي باُشر عليه زي متغير او اوبجيكت زي الامثله تحت
+
+
+----
+Using : 
+ - Check if Element Exists In Array.
+ - Check if Number In Range.
+
+
+EX :
+        let nums = [1,2,3,4,5,6,7];
+        let check = nums.some( (e) => {
+            return e > 5;
+        });
+        console.log(check);
+
+EX : (Using This Opertaor)
+        let nums = [1,2,3,4,5,6,7];
+        let myNumber = 10;
+        let check = nums.some( (e) => {
+            return e > this;
+        }, myNumber);
+
+        console.log(check);
+
+EX : (Advanced):
+ 
+        function checkValues(arr, val){
+            return arr.some(function(e){
+                return e === val;
+            })
+        }
+
+        console.log(checkValues(nums, 20)); //false
+
+
+Ex : (Using This Operator)
+
+        let nums = [1,2,3,4,5,6,7,2];
+        let range = {
+            min: 10,
+            max: 20,
+        }
+
+        let checkNumberInRange = nums.some(function (el){
+            return (el >= this.min && el<= this.max);
+        }, range)
+
+        console.log(checkNumberInRange);
+=======================================================================================================================
+                                                    "#131 - Array.every Method"
+- الايفري من اسمها مبينه عكس السوم ميثود , هون لازم الشرط ينطبق على كل عنصر بالأرراي عشان يعطيني ترو , 
+  ولو عنصر واحد ما انطبق عليه الشرط بترجعلي فولس دايركت.
+
+- Syntax : 
+     Array.every(callbackFunc(Element, Index, Arrat){}, This Argument); => الارراي هون بكتب اسم الأرري مش بكتب كلمة أرراي بس
+     --- CallbackFunc => Function To run On Every Element on The Given Array
+     ------ Element => The Currrnt Element To Proccess
+     ------ Index   => Index Of Current Element
+     ------ Array   => The Current Array Working With
+     --- This Argument => Value To use As This When Executing CallbackFunc => اشي باُشر عليه زي متغير او اوبجيكت زي الامثله تحت
+
+Ex : 
+        const locations = {
+            20: "Place 1",
+            30: "Place 2",
+            50: "Place 3",
+            40: "Place 4",
+        };
+
+        let mainLocation = 15;
+
+        let locationsArr = Array.from(Object.keys(locations), function(el){
+            return +el;
+        }); //عملت أرراي من الكيز ومن ثم مشيت على العناصر وحلوتها لأرقام لانها اجتني ك سترنج
+
+        console.log(locationsArr);
+
+        let checkVar = locationsArr.every(function (el){
+            return el>this
+        }, mainLocation); // هون شيكت اذا كل العناصر هي اكبر من المين لوكيشن اوبجيكت باستخدام الذيس
+
+        console.log(checkVar);
+
+================================================================================================================================
+                                                "#132 - Spread Syntax And Use Cases"
+
+- Spread Operator[Spread Syntax] => ...Iterable
+  "Allow Iterable To Expand In Place"
+
+
+// Spread With String => Expand String
+console.log("Mahmood"); //Mahmood
+console.log(..."Mahmood"); //M a h m o o d (بس فرط السترنج وزعو)
+console.log([..."Mahmood"]); //['M', 'a', 'h', 'm', 'o', 'o', 'd'] (فرط السترنج ووزعو وعمل عناصره ك أرراي)
+
+// Concatenate Arrays(easy way to cncat Arrays using spread Syntax)
+let myArray1 = [1,2,3];
+let myArray2 = [4,5,6];
+let AllArrays = [...myArray1, ...myArray2];
+console.log(AllArrays);
+
+// Copy Arrray
+let CopiedArray = [...myArray1];
+console.log(CopiedArray);
+
+//push inside array
+let AllFriends = ["Osama", "Mahmood","Sayed"];
+let thisYearFriends = ["Sameh","Sara"];
+AllFriends.push(...thisYearFriends); //هون فرطهم وبعدين ضافهم عالأرراي , يعني ما ضافهم كأرراي
+console.log(AllFriends);
+
+
+// Use With Math Object
+let myNums = [10,20,30,40,50,60,-12,1233];
+console.log(Math.max(myNums)); //هاي بترجعلي نان لانه ميثود ماكس بستنى مني مجموعة قيم
+console.log(Math.max(...myNums)); //فهون استخدام حلو للسبريد اوبيراتور عشان افرط الارراي لعدة عناصر
+
+
+// Spread With Objects => Merge Objects
+let Obj1 = {
+    a: 1,
+    b: 2,
+};
+
+let Obj2 = {
+    c: 3,
+    d: 4,
+};
+
+obj3 = {...Obj1, ...Obj2,e: 5}; //هون فرطت عناصر الاوبجيكت جبتهم ومن ثم دمجتهم وضفت خاصيه من عندي من باب التجربه وقدحتهم بمتغير جديد , هيك عملت ميرج للاوبجيكتس
+
+console.log(obj3);
+
+===============================================================================================================================
+                                                        "Map And Set Challenge"
+
+- let n1 = [10,30,10,20];
+    let n2 = [30, 20,10];
+    // My Solution Fot Elz Map And Set Challenge To result 210
+    console.log(Math.max(...Array.from(new Set([...n1,...n2])).copyWithin(1,0,1)) * Math.min(...Array.from(new Set([...n1,...n2])).copyWithin(1,0,1)) + Math.min(...Array.from(new Set([...n1,...n2])).copyWithin(1,0,1)) );
+
+    //The Right Solution  To result 210
+    console.log(Math.max(...n1) * [...n1,...n2].length);
+
+=================================================================================================================================
+                                                            "#134 - Intro And What Is Regular Expression"
+
+- الريجيولر اكسبريشن هو اني احدد باترين معين اتست<اماتش> فيه السترنج اللي عندي,
+  لانه بالاف كونديشن راح يطلعلي عدد كبير من التيست كيسز الللي من المستحيل اغطيها.
+
+- Use Cases : 
+  - Email :
+  - IP(Internet Protocol) :
+  - Phone :
+  - URL :
+
+Examples :
+    let invalidEmail = "Mahmood@@@gmail...com";
+    let validEmail = "m@nn.sa";
+
+    let validIp = "192.168.2.1"; //IPv4
+
+    let ValidURL = 'elzero.org';
+    let ValidURL = 'elzero.org/';
+    let ValidURL = 'http://elzero.org/';
+    let ValidURL = 'http://www.elzero.org/';
+    let ValidURL = 'https://www.elzero.org/';
+    let ValidURL = 'http://www.elzero.org/?facebookid=fdfgwgwg';
+
+
+
+===========================================================================================================================================
+                                                    "#135 - Regular Expressions - Modifiers"
+
+/*
+  Regular Expression
+
+  Syntax: 
+  /pattern/modifier(s); => هاي الطريقه اللي يفضل الشغل فيها
+  new RegExp("pattern", "modifier(s)"); => using constructor
+
+  Modifiers => Flags (هاي الموديفايرز بتعدل طريقة البحث او الماتش مع السترنج)
+  i => case-insensitive(يعني بصير الكابيتال زي السمول ببطل يفرق بينهم)
+  g => global (هاي يعني انه حيجيبلي كل النتايج اللي راح تظهر وتطابق الباترين)
+  m => Multilines
+
+  ***Hint : طبعا بقدر استخدم اكثر من موديفاير مع بعض عادي بدون مشاكل
+
+  Search Methods
+  - match(Pattern)
+
+  Match
+  -- Matches A String Against a Regular Expression Pattern (بتبحث بالسترنج عن الباترين اللي اعطيتها اياه)
+  -- Returns An Array With The Matches (بترجع ارراي باللي لقته)
+  -- Returns null If No Match Is Found. (بترجع نول اذا ما لقت اشي)
+*/
+
+
+Ex :
+
+    let myString = "Hello Elzero Web School I Love elzero";
+
+    let regex = /Elzero/i; => طريقه في تعريف الريقيولار اكسبريشين , مع اضافة موديفاير
+    et regex = /Elzero/ig; => هون بجيبلي من السترنج الاشياء اللي بتماتش هذا الباترين[كابيتال وسمول] وبتجيبهم كلهم عشان الجي
+    let regex2 = new RegExp(/Elzero/); => طريقه ثانيه في تعريف الريقيولار اكسبريشين
+    console.log(myString.match(regex)); => هون راح يطبعلي ارراي فيها وين لقى الباترين اللي حطيته بأي اندكس اذا عنصر واحد
+                                           واذا اكثر من عنصر بحطهم كلهم بأرراي بس.
+    
+==============================================================================================================================
+                                                    "#136 - Regular Expressions - Ranges Part 1"
+
+/*
+  Regular Expression
+
+  Ranges
+
+  - Part 1
+    (X|Y) => X Or Y
+    [0-9] => 0 To 9
+    [^0-9] => Any Character Not 0 To 9
+    Practice
+
+  - Part 2
+    [a-z] => الاحرف السمول من a to z 
+    [^a-z] => مش الاحر السمول من a to z عكس اللي فوق
+    [A-Z] =>نفس اللي فوق بس كابيتال 
+    [^A-Z] => نفس اللي فوق نوت كابيتال
+    [abc] => هاي بجيلي احد الاحرف هاي بس , يعني بتشبه الرينج
+    [^abc] =>  عكس اللي فوقها
+
+*/
+
+- First Simple Example :
+
+    let TopLevelDomain = "Com Net Org Info Code Io";
+    let TopLevelDomainRegx = /(org|info|io)/ig;
+    console.log(TopLevelDomain.match(TopLevelDomainRegx));
+
+- Exampels :
+    let nums = "712345678910";
+    let numsRegX = /[0-3]/g; // يعني اي رقم داخل هذا الرينج
+
+    console.log(nums.match(numsRegX)); //بشيك على كل رقم بالسترنج اذا بيماتش الريجيولار اكسبيريشن اللي عندي
+
+    let notNums = "712345678910";
+    let notNumsRegX = /[^0-3]/g; //هاي معناها نوت , يعني اي رقم خارج هذا الرينج
+
+    console.log(notNums.match(notNumsRegX)); //بشيك على كل رقم بالسترنج اذا بيماتش الريجيولار اكسبيريشن اللي عندي
+
+
+Ex : (كنت اعمله بطريقه صعبه بالسترنج ميثودز)
+
+    let Speacialnums = "1!2@3#4$5%678910";
+    let SpeacialNumsRegX = /[^0-9]/g; // يعني اي اشي خارج هذا الرينج 
+
+    console.log(Speacialnums.match(SpeacialNumsRegX)); //بشيك على كل كراكتر بالسترنج اذا بيماتش الريجيولار اكسبيريشن اللي عندي
+
+Ex :
+    let practice = "Os1 Os1Os Os2 Os8 Os8Os";
+    let practiceReg = /Os[5-9]Os/g; // يعني اي اشي ببلش بأو اس ورقم ضمن هذا الرينج وبعدها او اس
+
+    console.log(practice.match(practiceReg)); //بشيك على كل كراكت او مجموعة كراكترز بالسترنج اذا بيماتش الريجيولار اكسبيريشن اللي عندي
+
+
+
+Ex : (Simple Email ReqEx انا سويته عالذيق)
+
+    let practice = "Os1 Os1Os Os2 Os8 Os8Os mahm45ood45_jd3dwad@hotmail.com ";
+    let practiceReg = /[a-z0-9]*(_|-|.)[a-z0-9]*@(yahoo|gmail|hotmail).(com|net|io)/ig; // يعني اي رقم داخل هذا الرينج
+
+    console.log(practice.match(practiceReg)); //بشيك على كل رقم بالسترنج اذا بيماتش الريجيولار اكسبيريشن اللي عندي
+
+
+Ex :
+    let practice = "asdefbwefSrD";
+    let practiceReg = /[abc]/g; 
+
+    console.log(practice.match(practiceReg)); //[a,b]
+
+EX :
+     let practice = "asdefbwefSrD";
+     let practiceReg = /[a-zA-Z]/g; => هاي الاحرف الكابيتال والسمول 
+     let practiceReg2 = /[^a-zA-Z]/g; => هاي عكسها نوت الاحرف الكابيتال والسمول 
+
+     console.log(practice.match(practiceReg)); //[a,b]
+
+
+EX : (كيف بدي اجيب كل السبيشال كراكترز؟)
+     let practice = "as^d*efbw#e%f&*SrD";
+     let practiceReg = /[^a-zA-Z0-9]/g; => هاي يعني بجيبلي كل اشي ما عدا الاحرف كابيتال وسمول والارقام,يعني بس السبيشال كراكتر
+     let practiceReg2 = /[^a-z^A-Z0-9]/g; =>  هاي حركة غريبه , هون ببطل يجيبلي علامة ال^ كمان لانه النوت شملتها
+     console.log(practice.match(practiceReg)); //[All Special Charachters ]
+
+
+==========================================================================================================
+                                                " Regular Expressions - Character Classes Part 1"
+/*
+Regular Expression
+  Character Classes
+  . => matches any character, except newline or other line terminators.=> [يعني الدوت بتماتش اي كراكتر باستثناء النيو لاين وهاي الشغلات]
+  \w => matches word characters. [a-z, A-Z, 0-9 And Underscore]
+  \W => matches Non word characters => [spaces, dots, special characters ]
+  \d => matches digits from 0 to 9.
+  \D => matches non-digit characters.
+  \s => matches whitespace character. => [السبيس بس]
+  \S => matches non whitespace character. => [اي اشي غير السبيس]
+*/
+
+
+EX :
+   
+    let email = 'O@@@g...com O@g.com O@g.net A@Y.com O-g.com o@s.org 1@1.com';
+    let dot = /./g; //match Every Thing except \n and his sisters 
+    let word = /\w/g; //بيماتش الاحرف كابيتال سمول اندسكور ارقام 
+    let valid = /\w@\w.(com|net)/g; //Simple matcth email one char
+    console.log(email.match(dot));
+    console.log(email.match(word));
+    console.log(email.match(valid));
+
+---------
+Part 2 :
+
+/*
+  Regular Expression
+  Character Classes
+  \b => matches at the beginning or end of a word. (انه الكلمه بتبدأ او تنتهي بالكلمه اللي انا بختارها)
+  \B => matches NOT at the beginning/end of a word. (بالنص)
+
+  Test Method
+  pattern.test(input) => الماتش كانت ترجعلي أرراي , هاي التيست لا بترجعلي ترو اذا وحده عالاقل كانت بتماتش الباترين او فولس حسب الباترين
+
+*/
+
+EX :
+
+  let names = "Sayed 1Spam 2Spam 3Spam Spam4 Spam5 Osama Ahmed Aspamo";
+
+  let reGx = /(\bspam|spam\b)/ig; => هاي معناها جبلي اي كلمه بتبلش بكلكة سبام او بتنتهي بكلمة سبام
+  console.log(names.match(re));
+
+
+EX Using Test Method :
+    console.log(reGx.test(names)); // True [عادي بقدر اضيف الباترين هيك]
+    console.log(/(\bspam|spam\b)/ig.test("Osama")); // false  [او اضيف الباترين هيك]
+    console.log(/(\bspam|spam\b)/ig.test("1Spam")); //true 
+    console.log(/(\bspam|spam\b)/ig.test("Spam1")); //true 
+
+*** التيست ميثود تستخدم مع الاف كونديشن غالبا عشان تعمل تيست للانبوت فيلدس ونفحص اذا الشخص عدى من الانبوت رولز ولا للأ
+============================================================================================================================================
+                                                    " - Regular Expressions - Quantifiers Part 1"
+
+- اذا الكوانتيرفايرز هي الكاراكترز اللي بتساعدك على تحديد الكميه
+/*
+  Regular Expression
+
+  Quantifiers
+  n+    => One Or More => البلص معناها حرف او اكثر
+  n*    => zero or more => النجمه زيرو او اكثر
+  n?    => zero or one => علامة السؤال زيرو او واحد بس يعني موجود او مش موجود وممكن استخدمها بالاتش تي تي بي او اتش تي تي بي اس
+*/
+
+Ex :
+    let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru"; // All Emails
+    // let mailsRe = /\w+@\w+.(com|net)/ig; => البلص معناها حرف او اكثر
+    let mailsRe = /\w+@\w+.\w+/ig;
+
+
+    let nums = "0110 10 150 05120 0560 350 00"; // 0 Numbers Or No 0
+    let numsRe = /0\d*0/ig; => يعني بين الصفرين احتمال ما يكون فيه رقم واحتمال في رقم او اكثر
+    console.log(nums.match(numsRe));
+
+
+    let urls = "https://google.com http://www.website.net http://http://www.website.netweb.com"; // http + https
+    let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/ig; => علامة الاند ممكن تيجي بعد مجموعه من الاحرف مش شرط حرف واحد
+                                                        طبعا هون استخدمنا السكيب كاراكتارز عشان افهم اللغه الباترين وما يصيير عندي خطأ برمجي
+    console.log(urls.match(urlsRe));
+
+
+Ex : (تعديل على باتترين الايميل اللي سويته عالذيق فوق)
+    let practice = "Os1 Os1Os Os2 Os8 Os8Os mahm45ood45_jd3dwad@hotmail.com mahm45ood45_jd3dwad@hello.com";
+    let practiceReg = /\w+@\w+.(com|net|io)/ig; // يعني اي رقم داخل هذا الرينج
+
+    console.log(practice.match(practiceReg)); //بشيك على كل رقم بالسترنج اذا بيماتش الريجيولار اكسبيريشن اللي عندي
+
+============================================================================================================================================
+                                                    " - Regular Expressions - Quantifiers Part 2"
+
+/*
+  Regular Expression
+
+  Quantifiers
+  n{x}   => Number of
+  n{x,y} => Range من الى او بينهم
+  n{x,}  => At Least x
+*/
+
+    let serials = "S100S S3000S S50000S S950000S";
+
+    console.log(serials.match(/s\d{3}s/ig)); // S[Three Number]S
+    console.log(serials.match(/s\d{4,9}s/ig)); // S[Four Or nine Number or Between them]S
+    console.log(serials.match(/s\d{4,}s/ig)); // S[At Least Four]S
+
+
+============================================================================================================================================
+                                                        "142 - Regular Expression – Quantifiers Part 3"
+
+/*
+  Regular Expression
+
+  Quantifiers
+  $  => End With Something
+  ^  => Start With Something
+  ?= => Followed By Something (هاي عامله زي شرط انه بشرط ينتهي بحرف الزيد)
+  ?! => Not Followed By Something (هاي عامله زي شرط انه بشرط ما ينتهي بحرف الزيد)
+*/
+
+let myString = "We Love Programming";
+let names = "1OsamaZ 2AhmedZ 3Mohammed 4MoustafaZ 5GamalZ";
+
+console.log(/ing$/ig.test(myString)); => بنتهي بانج
+console.log(/^we/ig.test(myString)); => يعني ببلش بوي
+console.log(/lz$/ig.test(names));  => بنتهي بال زد
+console.log(/^\d/ig.test(names)); => ببلش برقم
+
+console.log(names.match(/\d\w{5}(?=Z)/ig)); => رقم وبعده حرف او رقم او اندر سكور عددد خمسه وبنتهي بحرف زد
+console.log(names.match(/\d\w{8}(?!Z)/ig)); => رقم وبعده حرف او رقم او اندر سكور عددد خمسه وما بنتهي بحرف زد
+
+============================================================================================================================================
+                                                            " - Regular Expressions - Replace With Pattern"
+- هون بدنا نحكي عن استخدام الريجيولار اكسبريسشن واللي همه الريبلييس والريبليس اول.
+- regular Expression :
+   
+   - replace 
+   - replaceAll
+
+Examples :
+    let txt = "We Love Programming And @ Because @ Is Amazing";
+    console.log(txt.replace("@", "JavaScript")); => بتبدل بس اول ظهورر للآت
+    console.log(txt.replaceAll("@", "JavaScript")); => كل مكام بتشوف فيه الآت بتبدلها
+    let re = /@/ig;
+    console.log(txt.replaceAll(re, "JavaScript"));
+    console.log(txt.replaceAll(/@/ig, "JavaScript"));
+=============================================================================================================================================
+                                                            " - Regular Expressions - Form Validation"
+/*
+  Regular Expression
+  - Input Form Validation Practice
+*/
+
+    <form id="register" action="" method="get">
+        <input type="text" id="phone" name="the-phone" maxlength="15" />
+        <input type="submit" value="Register" />
+    </form>
+
+    document.getElementById("register").onsubmit = function () {
+            let phoneInput = document.getElementById("phone").value;
+            let phoneRe = /\(\d{4}\)\s\d{3}-\d{4}/; // (1234) 567-8910
+            let validationResult = phoneRe.test(phoneInput);
+            if (validationResult === false) {
+                return false; //هون الفورم ما بتبعت البيانات
+            }
+        return true; //اما هون الطبيعي عند الترو الفورم بتبعت البيانات
+        }
+
+
+====================================================================================================================================================
+                                                    "148 - Constructor Function Introduction"
+
+- /*
+  Constructor Function => بتنادى مجرد ما انشأ اوبجيكت لحاله
+*/
+
+- هذا السينتاكس العادي في انشاء اوبجيكتس دايناميكالي يعني كأنه هذا هو الكلاس (سينتاكس قديم, الدرس اللي بعده السينتاكس الجديد)
+
+
+- بالجافا سكربت الكونستركتر فنكشن ما هي الا فنكنشن عاديه بطريقه كتابتها عادي جدا وبتوخد باراميترز
+  ولكن من البيست براكتس انه يكون اول حرف من اسم هذا الفنكشن كابيتال.
+
+
+
+EX :
+
+function User(id, username, salary) { //construcot function
+  this.id = id;
+  this.username = username;
+  this.salary = salary + 1000;
+}
+
+let userOne = new User(100, "Elzero", 5000); //instantiate object using constructor
+let userTwo = new User(101, "Hassan", 6000); //instantiate object using constructor
+let userThree = new User(102, "Sayed", 7000); //instantiate object using constructor
+
+console.log(userOne.i);
+console.log(userOne.u);
+console.log(userOne.s);
+
+console.log(userTwo.i);
+console.log(userTwo.u);
+console.log(userTwo.s);
+
+console.log(userThree.i);
+console.log(userThree.u);
+console.log(userThree.s);
+
+// const userOne = {
+//   id: 100,
+//   username: "Elzero",
+//   salary: 5000,
+// };
+
+// const userTwo = {
+//   id: 101,
+//   username: "Hassan",
+//   salary: 6000,
+// };
+
+// const userThree = {
+//   id: 102,
+//   username: "Sayed",
+//   salary: 7000,
+// };
+====================================================================================================================================================
+                                                    "149 - Constructor Function New Syntax"
+
+/*
+  Constructor Function
+  - New Syntax => هيك صارت الكلاسات والاوبجيكتس والكونستركتور بالسينتاكس الجديد بالايكما سكربت
+*/
+
+class User {
+  constructor(id, username, salary) {
+    this.i = id;
+    this.u = username;
+    this.s = salary + 1000;
+  }
+}
+
+let userOne = new User(100, "Elzero", 5000);
+
+console.log(userOne.i);
+console.log(userOne.u);
+console.log(userOne.s);
+
+console.log(userOne instanceof User); //return true or false , in this case will be true
+console.log(userOne.constructor === User); //return true or false , in this case will be true
+
+====================================================================================================================================================
+                                                    "150 - Deal With Properties And Methods"
+
+/*
+  Constructor Function
+  - Deal With Properties And Methods
+*/
+
+class User {
+  constructor(id, username, salary) { // كل البروبيرتيز داخل الكونستركتور
+    // Properties
+    this.i = id;
+    this.u = username || "Unknown"; //هون اذا اليوزر نيم فاضي بوخذ الديفولت الانون
+    this.s = salary < 6000 ? salary + 500 : salary;
+    this.msg = function () {
+      return `Hello ${this.u} Your Salary Is ${this.s}`; //حتى هاي تعتبر بروبيرتي عادي لا تعتبر ميثود
+    };
+  }
+
+  // Methods الميثودز خارح الكونستركتور
+  writeMsg() {
+    return `Hello ${this.u} Your Salary Is ${this.s}`;
+  }
+}
+
+let userOne = new User(100, "Elzero", 5000);
+let userTwo = new User(101, "", 6000);
+
+console.log(userOne.u);
+console.log(userOne.s);
+console.log(userOne.msg()); //هاي بترجعلي بنتيجة التنفيذ
+console.log(userOne.writeMsg()); //هاي بترجعلي بنتيجة التنفيذ
+
+console.log(userTwo.u);
+console.log(userTwo.s);
+console.log(userTwo.msg); // Native Code
+console.log(userTwo.writeMsg); // Native Code
+
+====================================================================================================================================================
+                                            "#151 - Update Properties And Built In Constructors"
+
+/*
+  Constructor Function
+  - Update Properties => طبعا بخلي اليوزر يعدل البروبيرتيز ناعته عن طريق ميثود بعمله ااياها
+  - Built In Constructors => اللي هي زي new String() , new Number() .....
+*/
+
+
+
+let strOne = "Elzero";
+let strTwo = new String("Elzero");
+
+console.log(typeof strOne); //هون حيعطيني سترنج
+console.log(typeof strTwo); //هون حيطبعلي اوبجيكت مش سترنج لاني استخدمت الكونستركتور
+
+console.log(strOne instanceof String); //فولس لانه انا لما سويته ما استخدمت الكلاس الرئيسي انشأته بطريقه ثانيه
+console.log(strTwo instanceof String); //ترو هون راح يعطيني لانه استخدمنا الكونستركتور في انشاء الاوبجيكت
+
+console.log(strOne.constructor === String); //ترو لانه ضمنيا استخدم نفس كونستركتور السترنج لما انشأه
+console.log(strTwo.constructor === String); //ترو لانه  استخدم كونستركتور السترنج لما انشأه
+
+====================================================================================================================================================
+                                            "#152 - Class Static Properties And Methods"
+/*
+  Class
+  - Static Properties And Methods => الستاتيك هي الشغلات اللي الها علاقه بالكلاس نفسه مش مربوطه بأوبجيكت والاوبجيكت ما بقدر يأكسيس عليهم
+*/
+
+
+
+class Userinfo {
+
+  static count = 0; //بقدرش أكسس عليها الا باستخدام الكلاس (Userinfo.count)
+
+  constructor(id, username, salary) {
+    //Propreties
+    this.id = id;
+    this.username = username;
+    this.salary = salary + 1000;
+    Userinfo.count++; //عند كل انشاء اوبجيكت راح تزيد بواحد
+  }
+
+  updateName(newName){
+    this.username = newName;
+  }
+
+  //static methods
+  static sayHello(){
+    return 'Hello From class Userinfo';
+  }
+
+  static countMemebers(){
+    return `${Userinfo.count} Members Created`;
+  }
+}
+
+
+let userOne = new Userinfo(100, "Mahmood",4343);
+let userTwo = new Userinfo(466, "fds",4343);
+
+console.log(userOne.count); //undefind لانه الكاونت ستاتيك
+
+console.log(Userinfo.count); //بترجع قيمة الكاونت
+
+console.log(Userinfo.countMemebers()); //بتنفذ الفنكنشن طبيعي
+
+====================================================================================================================================================
+                                            "#153 - Class Inheritance"
+- بالجافاسكربت بتسخدم الاكستيندس في الوراثه زي البي اتش بي.
+
+//Parent class
+class Userinfo {
+  constructor(id, username) {
+    //Propreties
+    this.id = id;
+    this.username = username;
+  }
+  // methods
+  sayHello(){
+    return `Hello ${this.username}`;
+  }
+
+}
+
+//Derived class
+class Admin extends Userinfo{
+  constructor(id, username, permissions) {
+    //Propreties
+    super(id, username); //السوبر هو الكلاس الاب لهذا الكلاس وكونه وورث منه ف برجع يبعتله الاشياء اللي وصلته لما انشأنا اوبجيكت الادمن
+    this.p = permissions;
+  }
+
+}
+
+//Derived class
+class superMan extends Admin { //برضو بورث من كلاس اليوزر الرئيسي لانه وارث من الادمن والادمن وارث من كلاس اليوزر
+  constructor (id, username, permissions, ability){
+    super(id, username, permissions);
+    this.a = ability;
+  }
+}
+
+
+let userOne = new Userinfo(100, "Mahmood");
+let adminOne = new Admin(110, "Elzero", 1);
+let superUser = new superMan(120, "super", 100, "remove admin");
+
+console.log(userOne);
+console.log(userOne.sayHello());
+console.log("######");
+console.log(adminOne);
+console.log(adminOne.sayHello());
+console.log("######");
+console.log(superUser);
+console.log(superUser.sayHello());
+
+====================================================================================================================================================
+                                            "#154 - Class Encapsulation"
+
+- /*
+  Encapsulation (تغليف البيانات)
+  - Class Fields Are Public By Default => لما أنشأ اي كلاس كل الخصائص لكل اوبجيكت بتكون ببلك هيك الطبيعي
+  - Guards The Data Against Illegal Access. => تحمي البيانات الضروريه زي مثلا ما اخلي اليوزر يوصل للباسورد الا عن طريق ميثود تشرفلي هذا الباسسورد
+  - Helps To Achieve The Target Without Revealing Its Complex Details.
+  - Will Reduce Human Errors.
+  - Make The App More Flexible And Manageable.
+  - Simplifies The App.
+*/
+
+//البرايفت بالجافا سكربت بستخدم اشارة المربع قبل اسم البروبيرتي
+// ولازم لازم اعمل ديكلير لهاي البروبيرتي على مستوى الكلاس\
+
+//البرايفت بالجافا سكربت بستخدم اشارة المربع قبل اسم البروبيرتي
+// ولازم لازم اعمل ديكلير لهاي البروبيرتي على مستوى الكلاس\
+
+class User {
+  //Here is declare private propreties
+  #e;
+
+  constructor(id, username, eslary ){
+    this.i = id;
+    this.u = username;
+    this.#e = eslary;
+  }
+
+  getSalary(){ //hidden implementation from user inside client
+    return parseInt(this.#e);
+  }
+}
+
+
+class admin extends User{
+  constructor(id, username, eslary,premission){
+    super(id, username, eslary);
+    this.p = premission;
+  }
+
+  getSalary222(){ 
+    return parseInt(this.#e); //Property '#e' is not accessible outside class 'User' because it has a private identifier.ts(18013)
+  }
+
+}
+
+
+
+let userOne = new User(100, "Elzero", 5000);
+let admin1 = new admin(100, "Elzero", 5000,1);
+
+console.log(userOne);
+console.log(admin1);
+// console.log(userOne.#e * 0.3); //Property '#e' is not accessible outside class 'User' because it has a private identifier.ts(18013)
+console.log(userOne.getSalary() * 0.3);
+console.log(admin1.getSalary() * 0.3);
+
+============================================================================================================
+                                                        "155 - Prototype Introduction"
+/*
+  Prototype (نموذج او مخطط)
+  - Introduction
+  - Prototypes are the mechanism by which JavaScript objects
+    inherit features from one another. 
+    ( يعني البروتوتايب هو اوبجيكت بكون فيه معلومات وهاي المعلومات عباره عن الفيتشرز اللي بالكلاس(الميثودز) ف بصير كل اوبجيكت 
+    يتم انشاءه يورث هاي الفيتشرز ويقدر يأكسس عليها)
+    - طبعا البروتو تايب غير مقتصره على الكلاس بل كل فنكشن بنشأه بكون اله بروتو تايب , لا انسى انه الكلاس ما هو الا جافاسكربت فنكشن
+*/
+
+class User {
+  constructor(id, username) {
+    this.i = id;
+    this.u = username;
+  }
+  sayHello() {
+    return `Hello ${this.u}`;
+  }
+}
+
+let userOne = new User(100, "Elzero");
+console.log(userOne.u);
+
+console.log(User.prototype); //هون حيطبعلي كل الميثودز الخاصه بهذا الكلاس واللي هي تعتبر فيتشرز وتخزنت بالبروتوتايب عشان يتم وراثتها
+
+let strOne = "Elzero";
+
+console.log(String.prototype);
+
+=================================================================================================================================
+                                                        "156 - Add To Prototype Chain"
+
+/*
+  Prototype
+  - Add To Prototype Chain 
+  - Extend Built In Constructors Features
+*/
+
+class User {
+  constructor(id, username){
+    this.i = id;
+    this.u = username;
+  }
+
+  sayHello(){ =
+    return `Hello ${this.u}`;
+  }
+}
+
+let userOne = new User(100, "Mahmood");
+
+console.log(userOne.u);
+console.log(User.prototype);
+console.log(userOne);
+
+//How to add method/property(feature) to prototype object for the user class.
+User.prototype.sayWelcome = function () {
+  return `Welcome ${this.u}`;
+}
+
+//How to add method/property(feature) to prototype for built in constructor(class/object).
+Object.prototype.love = "Elzero Web School"; //Ex1
+
+String.prototype.addDotBeforeAndAfter = function (val) { //Ex2
+
+    return '.' + val + '.';
+     
+}
+
+========================================================================================================================================
+                                                        "157 - Object Meta Data And Descriptor Part 1"
+
+/*
+  Object Meta Data And Descriptor
+  - writable
+  - enumerable
+  - configurable [Cannot Delete Or Reconfigure]
+*/
+
+- هذا الدرس بدي اتعلم اتعامل مع الاوبجيكت بطريقه متقدمه واضافة البروربيرتيز بطريقة احترافيه والتحكم بها بشكل كامل.
+
+const myObject = {
+  a: 1,
+  b: 2,
+
+}
+
+// 1- How to add property to the object advanced method:
+
+Object.defineProperty(myObject, 'c',{ // اهذا الديسكربيتور لهاي البروبيتري اللي بدي اضيفها وهاي العناصر اللي بتخليني اتحكم بالبروبيرتي تحكم كامل والديفولت تاعها كلها فولس
+
+  writable: false, // هاي بتسمحلي اغير قيمة الخاصيه بعد ما احطها واذا فولس ما بنفع اعدل عليها
+  enumerable: true, // وهي ترو لما اجي الوب على الاوبجيكت بطبعلي كل البروبرتيز طبيعي ومن ضمنهم هاي الخاصيه اذا فولس لما الوب على الاوبجيكت ما بوصللها
+  configurable: false, // هاي اذا كانت فولس بتمنعني اعدي تعريف الخاصيه واغير بالرايتابيل او الانيميورابيل او كونفيجرابيل او حتى اعدل قيمتها
+  value: 3,
+})
+
+// Object.defineProperty(myObject, 'c',{ // اهذا الديسكربيتور لهاي البروبيتري اللي بدي اضيفها وهاي العناصر اللي بتخليني اتحكم بالبروبيرتي تحكم كامل والديفولت تاعها كلها فولس
+
+//   writable: true, 
+//   enumerable: true, 
+//   configurable: true, 
+//   value: 4,
+// })
+
+for (const key in myObject) {
+ console.log(key, myObject[key]);
+}
+
+
+
+//2- How tp delete property from object ?:
+delete myObject.c;
+
+
+
+console.log(myObject);
+
+=================================================================================================================================================================
+                                                        "157 - Object Meta Data And Descriptor Part 2"
+
+- /*
+  Object Meta Data And Descriptor
+  - Define Multiple Properties
+  - Check Descriptors
+*/
+
+const myObject = {
+  a: 1,
+  b: 2,
+};
+
+Object.defineProperties(myObject, {
+  c: {
+    configurable: true,
+    value: 3,
+  },
+  d: {
+    configurable: true,
+    value: 4,
+  },
+  e: {
+    configurable: true,
+    value: 5,
+  },
+});
+
+console.log(myObject);
+
+console.log(Object.getOwnPropertyDescriptor(myObject, "d"));
+console.log(Object.getOwnPropertyDescriptors(myObject));
+
+=================================================================================================================================================================
+                                                        "159 - Date And Time Introduction"
+                                                      
+- /*
+  Date And Time
+  - Date Constructor
+
+  Static Methods
+  - Date.now() => برجعلي عدد الميلي سكندس من 1/1/1970
+
+  - To Track Time You Need Starting Point
+  - Epoch Time Or Unix Time In Computer Science Is The Number of Seconds Since January 1, 1970. 
+  - Why 1970? [829 Days To 136 Years]
+
+  Search For
+  - Year 2038 Problem in Computer Science.
+*/
+
+let dateNow = new Date();
+
+console.log(dateNow);
+
+console.log(Date.now()); //number of milliseconds from 1970 till now 1000 Mill seconds = 1 seconds
+
+let seconds = Date.now() / 1000; //number of seconds from 1970 till now
+console.log(seconds);
+
+let minutes = seconds / 60; //number of minutes from 1970 till now
+console.log(minutes);
+
+let hours = minutes / 60; //number of minutes from 1970 till now
+console.log(hours);
+
+let days = hours / 24; //number of days from 1970 till now
+console.log(days);
+
+let months = days / 30; //number of days from 1970 till now
+console.log(months);
+
+let years = days / 365; //number of years from 1970 till now
+console.log(years);
+
+=================================================================================================================================================================
+                                                        "160 - Get Date And Time"
+- /*
+  Date And Time
+  - getTime() => Number Of Milliseconds
+  - getDate() => Day Of The Month
+  - getFullYear()
+  - getMonth() => Zero Based
+  - getDay() => Day Of The Week
+  - getHours()
+  - getMinutes()
+  - getSeconds()
+*/
+                                      
+
+let dateNow = new Date(); //Current date and time
+let birthDay = new Date("Jan 24, 99"); //بقدر احط اي تاريخ واتعامل معه طبيعي 
+let dateDiff = dateNow - birthDay; //هاي بتحسبلي الوقت من التاريخ اللي حطيته لهسا بالميلي سيكند
+
+console.log(dateDiff);
+
+console.log(dateDiff / 1000 / 60 / 60 / 24 / 365); // هاي العمليه بتحسبلي عمري التقريبي
+
+console.log(dateNow);
+console.log(dateNow.getTime());//عدد الميلي سيكندس من بداية الوقت لهسا
+console.log(dateNow.getDate()); //اليوم بالنسبه للشهر
+console.log(dateNow.getFullYear());
+console.log(dateNow.getMonth()); //بجيب الاشهر والاندكس ببلش من صفر
+console.log(dateNow.getDay()); // اليوم من الاسبوع وببلش من الاحد اللي هو صفر
+console.log(dateNow.getHours());
+console.log(dateNow.getMinutes());
+console.log(dateNow.getSeconds());
+
+//*****لو بدي اجيب الايام والاشهر واتجنب شغلة الاندكس صفر فيهم بسوي ارراي وبحط فيها الايام وارراي للأشهر وبصير اجيب الاندس ف برجعلي اسم الشهر او اليوم يشكل صحيح */
+
+=================================================================================================================================================================
+                                                        "161 - Set Date And Time"
+
+/*
+  Date And Time
+  - setTime(Milliseconds)
+  - setDate() => Day Of The Month [Negative And Positive]
+  - setFullYear(year, month => Optional [0-11], day => Optional [1-31])
+  - setMonth(Month [0-11], Day => Optional [1-31]) [Negative And Positive]
+  - setHours(Hours [0-23], Minutes => Optional [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
+  - setMinutes(Minutes [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
+  - setSeconds(Seconds => [0-59], MS => Optional [0-999])
+*/
+
+let dateNow = new Date();
+console.log(dateNow);
+
+console.log("#".repeat(66));
+
+ dateNow.setTime(0); // انا هون عدلت عالوقت من بداية التوقيت العالمي وعدلت عالثواني انه من بداية الوقت عدى صفر ثانيه
+console.log(dateNow);
+
+console.log("#".repeat(66));
+
+dateNow.setTime(10000); // انا هون عدلت عالوقت من بداية التوقيت العالمي وعدلت عالثواني انه من بداية الوقت عدى 10 ثواني 
+console.log(dateNow);
+
+console.log("#".repeat(66));
+
+dateNow.setDate(1); // بعدل اليوم عالتوقيت الحالي
+console.log(dateNow);
+
+dateNow.setDate(35); // بروح للشهر اللي بعده مثلا لو الشهر 31 يوم ال35 بتنحط بالشهر اللي بعده اليوم الرابع
+console.log(dateNow);
+
+dateNow.setDate(-1); // بروح للشهر اللي قبله مثلا لو الشهر 31 يوم ال-1 بتنحط بالشهر اللي بعده اليوم 28
+console.log(dateNow);
+
+dateNow.setFullYear(2020, 13); // بغير السنه واليوم والشهر اختياري وهون حيزيد سنه لانه الشهر حاطه 13 ف زاد سنه وعد شهرين وهكذا بالنسبه للأيام
+console.log(dateNow);
+
+dateNow.setMonth(15); //نفس المبدأ بس هون بعدل الشهر لحاله وبزيد سنه وبعدل الشهر الجديد اذا زاد الرقم عن 11 واليوم احتياري كمان
+console.log(dateNow);
+
+
+=================================================================================================================================================================
+                                                        "161 - Set Date And Time"
+/* 
+  - هون بدنا نحكي عن الطرق اللي بنكتب فيها التاريخ والوقت
+  Date And Time
+
+  new Date(timestamp)
+  new Date(Date String)
+  new Date(Numeric Values)
+
+  Format
+  - "Oct 25 1982"
+  - "10/25/1982"
+  - "1982-10-25" => ISO International Standard
+  - "1982 10"
+  - "1982"
+  - "82"
+  - 1982, 9, 25, 2, 10, 0
+  - 1982, 9, 25
+  - "1982-10-25T06:10:00Z"
+
+  Date.parse("String") // Read Date From A String
+*/
+
+
+console.log(Date.parse("Jan 24, 1999")); //هاي عباره عن ميثود بترجعلي عدد االميلي سكند لحد التاريخ هذا
+
+let date1 = new Date(0); //عادي بقدر احط رقم وهو بالميلي سكند وبعد من بداية التاريخ حسب العدد اللي حطيته وبجيبله النتجيه بفورمات مفهوم
+console.log(date1);
+
+
+let date2 = new Date(Date.parse("Jan 24, 1999")); //عادي بقدر احط رقم وهو بالميلي سكند وبعد من بداية التاريخ حسب العدد اللي حطيته وبجيبله النتجيه بفورمات مفهوم
+console.log(date2);
+
+let date3 = new Date("01/24/1999");// mm/dd/yy OR mm-dd-yy او اي اي علامه او حتى سبيس بينهم برضو بقرأها عادي
+console.log(date3);
+
+let date4 = new Date("1982-10-25"); //iso Format
+console.log(date4);
+ 
+let date5 = new Date("1982-10"); //iso Format without day
+console.log(date5);
+
+let date6 = new Date("82");  //iso Format without month
+console.log(date6);
+
+let date7 = new Date(1982, 9, 25, 2, 10, 0);//yy, mm, dd, HH, Min, SS (هذا شهر 10 بس عشان الاندكس كتبنا 9)
+console.log(date7);
+
+let date8 = new Date(1982, 9, 25);
+console.log(date8);
+
+let date9 = new Date("1982-10-25T06:10:00Z"); // حرق التي هو عباره عن فصله بين الوقت والتاريخ وحرف الزيد بعبر عن التايم زون يعني بحسب الاردن بزيد 2 ف رايح تصير الساعه بهالمثال 8
+console.log(date9);
+
+
+=======================================================================================================================================================================
+                                                                                    "#163 - Tracking Operations Time"
+- /*
+  Date And Time
+  - Track Operations Time
+
+  Search
+  - performance.now() =>  نفس مبدأ فكرة الدرس بس هاي ادق وبتعطيك وقت ادق من الديت دوت ناو وبقدرش اعدلها يدوي زي الديت ناو
+  - performance.mark() =>
+
+      The performance.mark method is an useful timing analysis toolkit. 
+      The User Timing API provides a way that you can insert API calls at different parts of your Javascript and then extract 
+      detailed timing data that can be used to help you optimize.
+      Mark function stores a time stamp internally in the browser. You can name the time stamp the way you want, this time stamp 
+      is as a single unit. The use of performance.mark is really simple :
+*/
+
+
+//Starting time
+let startingTime = new Date();
+
+
+//Operation
+for(let i = 0 ; i < 100000 ; i++){
+    // document.write(`<div>${i}</div>`);
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(i));
+  document.body.appendChild(div);
+
+}
+
+//End Time
+let endTime = new Date();
+
+//Opratiom Duration
+let duration = endTime - startingTime; //result in Mili seconds
+console.log(duration/ 1000 / 60 , "min"); //converted to min
+
+=======================================================================================================================================================================
+                                                                              "#164 - Generator Function Introduction"
+
+- طبعاً الجينيراتور فنكشن مختلفه تماما عن الفنكشن العاديه اللي بنتعامل معها, من اقرب الامثله على استخدامات هذا الفنكشن 
+  اللي هي عملية السي مور انه بكون بالصفخه ظاهرلي بيانات معينه وبس اكبس سي مور بظهرلي بيانات اضافيه
+/*
+  Generators
+  - Generator Function Run Its Code When Required. => يعني الكود ما بصيرله رن الا لما احتاجه
+  - Generator Function Return Special Object [Generator Object] => وطبعا هة اوبجيكت وايتربيل بقدر الوب على البيانات اللي جواه
+  - Generators Are Iterable => وطبعا هة اوبجيكت وايتربيل بقدر الوب على البيانات اللي جواه
+*/
+
+Syntax : 
+
+function *generateNumbers() {
+    yield 1;
+    // alert("Hello after yield 1"); هاي بتتنفذ بعد ثاني نيكست ف بنفذها وبنزل لليلد اللي بعدها
+    console.log("Hello after yield 1");
+    yield 2;
+    yield 3;
+    yield 4;
+}
+
+let generator = generateNumbers();
+
+console.log(typeof generator);
+console.log(generator);
+
+console.log(generator.next()); //{value: 1, done: false} هذا نتيجته اوبجيكت الفاليو بقدر اوصللها عادي والدون هي اذا خلصت العناصر كامله بكون ترو ما خلصتهم بكون فولس زي هالمثال
+console.log(generator.next());
+console.log(generator.next()); 
+console.log(generator.next());
+console.log(generator.next()); //هاي بتعطيني الدون ترو بتكون فيها والفاليو انديفايند
+
+//How to loop on generator elements
+for(let value of generateNumbers()){ //هون عادي بعمل لوب لانه هذا الفنكنشن الاساسي كأني بستخدمها من اول وجديد
+    console.log(value);
+}
+
+for(let value of generator){ // كله مربوط بكله هون مش حيعرف يطلعلي اشي لانه فوق بالنيكست عملت يلد(انتاج لكل العناصر اللي بالجينيراتور ف صار فاضي)
+    console.log(value);
+}
+
+=======================================================================================================================================================================
+                                                                              "#164 - Generator Function Introduction"
+- /*
+  Generators
+  - Delegate Generator => عملية الديليجيتنج هي انه جينيرتور فنكشن تنوب عن وحده ثانيه بانها تعمل ييلد للبيانات
+*/
+
+
+function* generateNums(){
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+function* generateLetters(){
+    yield "A";
+    yield "B";
+    yield "C";
+}
+
+function* generateAll(){
+    yield* generateNums(); //هون صارت عملية الديليجيت
+    yield* generateLetters(); //هون صارت عملية الديليجيت
+    // yield [4,5,6]; //هون لما اسخدم النيكست واوصللها راح يطبلعي الأرراي هاي بالفاليو مش يطبعها عنصر عنصر
+    yield* [4,5,6]; //هون مع الستار راح يطبعلي اياهم عنصر عنصر عادي ع كل نيكست يجيبلي عنصر
+
+}
+
+let generatot = generateAll();
+
+console.log(generatot.next());
+console.log(generatot.next());
+console.log(generatot.next());
+console.log(generatot.next());
+console.log(generatot.next());
+console.log(generatot.next());
+console.log(generatot.return("Stop here")); //االريتيرن بتوقف عمل الجينيراتور وكل اللي بعدها بصير انديفايند وترو وهي من ضمنهم وبقدر احط جواتها قيمه
+console.log(generatot.next());
+console.log(generatot.next());
+console.log(generatot.next());
+
+=======================================================================================================================================================================
+                                                                              "#166 - Generate Infinite Numbers"
+/*
+  Generators
+  - Generate Infinite Numbers =>  بستخدم اللوب وبهالمثال استخدمت الوايل طبعا بتشتغل الوايل عالطلب كل ما اناديها
+  - Use Return Inside Generators
+*/
+
+function* generateNumbers() {
+    // yield 1;
+    // yield 2;
+    // return "A"; //بوقف عمل الجينيريتةر فنكنشن وبصير ترو والقيمه تاعته [الايه] من هون وانزل
+    // yield 3;
+    // yield 4;
+    let index = 0;
+  
+    while (true) {
+      yield index++;
+    }
+  }
+  
+  let generator = generateNumbers();
+  
+  console.log(generator.next());
+  console.log(generator.next());
+  console.log(generator.next());
+  console.log(generator.next());
+
+  =======================================================================================================================================================================
+                                                                              "#167 - Modules Import And Export"
+- استيراد وتصدير الوحدات والوحده(ملف/كلاس/فنكشن/متغير ....) هي عباره كود مع بعض بنفذ وظيفه معينه.
+- مثلا موديول خاص بالصور , موديول بيتعامل مع النصوص واشي مع التشفير وهكذا
+
+- هون عشان اعمل امبورت لأي اشي كحتاج اني انا اعمللها اكسبورت.
+
+- اختيار اسم مستعار للأشي اللي عملتله امبورت هو اختياري ومش اجباري.
+
+EX : 
+
+<body>
+    <script src="main.js" type="module"></script> => هون اضفنا بروبيرتي انه نوع الملف موديول
+    <script src="app.js" type="module"></script>
+</body>
+
+
+main.js file :
+
+            *
+              Modules
+              - Import And Export
+            */
+
+            export let a = 10; => مثال على عمل اكسبورت لاِشي واحد
+            let arr = [1, 2, 3, 4];
+
+            function saySomething() {
+              return `Something`;
+            }
+
+            export { a, arr, saySomething }; => اما هيك بعمل اكسبورت او اني اعمل اكسبورت لكل وحده لحالها 
+
+--------------------------------------------------------------------
+app.js file :
+
+              import { a, arr, saySomething as s } from "./main.js";
+
+              console.log(a);
+              console.log(arr);
+              console.log(s());
+
+==================================================================================================================================================================
+                                                                 "#168 - Named vs Default Export And Import All"
+   
+   
+   
+EX :   
+   
+    <script src="main.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+
+
+/*
+  Modules
+  - Export Alias
+  - Named Export
+  - Default Export
+  - Import All
+*/
+
+main.js file :
+
+
+        let a = 10;
+        let arr = [1, 2, 3, 4];
+
+        function saySomething() {
+          return `Something`;
+        }
+
+        export { a as myNumber, arr, saySomething }; //عملت اكسبورت باسم مستعار , بس لازم اعمله امبورت بنفس الاسم المستعار
+
+        export default function () { //كل ملف بكون عندي اكسبورت ديفولت وحده بس 
+          return `Hello`;
+        }
+
+--------------------------------------------------------------------
+app.js file :
+
+      // import elzero, { myNumber, arr, saySomething as s } from "./main.js"; //بعمل امبورت للديفولت برا الاشياء الثانيه وبقدر اسميها اي اسم عادي
+
+      // console.log(myNumber);
+      // console.log(arr);
+      // console.log(s());
+      // console.log(elzero());
+
+      import * as all from "./main.js"; //هيك بجيب كل اشي بالملف بعمله امبورت
+
+      console.log(all);
+
+      console.log(all.myNumber);
+      console.log(all.arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--->  
